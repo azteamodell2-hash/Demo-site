@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motion Mastery Soccer Academy</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #0b0b0b 0%, #1f0000 100%);
+      color: #f2f2f2;
+      text-align: center;
+    }
+
+    /* HERO */
+    header {
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.85), rgba(0,0,0,0.95)),
+        radial-gradient(circle at top, rgba(179,0,0,0.4), transparent 70%);
+      padding: 60px 20px 50px;
+      border-bottom: 3px solid #b30000;
+    }
+
+    .badge {
+      width: 420px;
+      max-width: 90%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      margin: 10px 0 0;
+      font-size: 38px;
+      letter-spacing: 1px;
+    }
+
+    main {
+      padding: 50px 20px;
+    }
+
+    h2 {
+      color: #ff2a2a;
+      margin-bottom: 15px;
+    }
+
+    p {
+      max-width: 700px;
+      margin: 0 auto 25px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* BUTTON */
+    .btn {
+      display: inline-block;
+      padding: 16px 34px;
+      background-color: #b30000;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      border: 2px solid black;
+      transition: all 0.25s ease;
+      margin: 10px;
+    }
+
+    .btn:hover {
+      background-color: black;
+      color: #ff2a2a;
+      border-color: #b30000;
+      transform: scale(1.05);
+    }
+
+    /* PRICING */
+    .pricing-section {
+      margin-top: 70px;
+      border-top: 2px solid #b30000;
+      padding-top: 40px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .price-card {
+      background: linear-gradient(145deg, #1a1a1a, #0e0e0e);
+      border: 2px solid #b30000;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: left;
+      box-shadow: 0 6px 15px rgba(179, 0, 0, 0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .price-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(179, 0, 0, 0.6);
+    }
+
+    .price-card h3 {
+      color: #ff2a2a;
+      margin-bottom: 10px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .price-card ul {
+      list-style: none;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    .price-card li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* CLINIC */
+    .clinic {
+      margin-top: 70px;
+      padding-top: 30px;
+      border-top: 2px solid #b30000;
+    }
+
+    .clinic-card {
+      max-width: 420px;
+      margin: 25px auto;
+      padding: 25px;
+      background: linear-gradient(145deg, #1a1a1a, #0e0e0e);
+      border: 2px solid #b30000;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(179, 0, 0, 0.4);
+    }
+
+    .clinic-card h3 {
+      color: #ff2a2a;
+    }
+
+    /* CONTACT */
+    .contact {
+      margin-top: 60px;
+      font-size: 15px;
+    }
+
+    .social {
+      margin-top: 15px;
+    }
+
+    .social a {
+      color: #ff2a2a;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer {
+      background-color: black;
+      padding: 20px;
+      margin-top: 60px;
+      border-top: 3px solid #b30000;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <img src="badge.png" alt="Motion Mastery Soccer Academy Badge" class="badge">
+  <h1>Motion Mastery Soccer Academy</h1>
+</header>
+
+<main>
+  <h2>Elite Soccer Training</h2>
+  <p>
+    Personalized training designed to accelerate development, sharpen technique,
+    and translate skills directly into game performance.
+  </p>
+
+  <!-- PRICING -->
+  <div class="pricing-section">
+    <h2>Training Pricing</h2>
+
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>One-on-One Training</h3>
+        <ul>
+          <li>Single Session – $40</li>
+          <li>5 Sessions – $190 (Save $10)</li>
+          <li>8 Sessions – $300 (Save $20)</li>
+          <li>10 Sessions – $360 (Save $40)</li>
+        </ul>
+      </div>
+
+      <div class="price-card">
+        <h3>Semi-Private Training <br>(2 Players)</h3>
+        <ul>
+          <li>Single Session – $60 ($30 per player)</li>
+          <li>5 Sessions – $280 (Save $20)</li>
+          <li>8 Sessions – $450 (Save $30)</li>
+          <li>10 Sessions – $540 (Save $60)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIVATE TRAINING BUTTON -->
+  <div style="margin-top:50px;">
+    <a
+      href="https://docs.google.com/forms/d/1bLQdMSfD1vNv1mFrJyQw4PBv66g4ArOKwQLSz3_Wkp8/edit"
+      target="_blank"
+      class="btn">
+      Private Training Registration
+    </a>
+  </div>
+
+  <!-- CLINIC -->
+  <div class="clinic">
+    <h2>Upcoming Clinics</h2>
+    <div class="clinic-card">
+      <h3>Gilbert Clinic</h3>
+      <p>
+        High-intensity 3-day clinic focused on shooting, ball mastery,
+        and competitive play.
+      </p>
+      <p><strong>$20 per day • $50 full clinic</strong></p>
+    </div>
+  </div>
+
+  <div class="contact">
+    <p>Email: azteamodell2@gmail.com</p>
+    <p>Phone: 480-688-4134</p>
+  </div>
+
+  <div class="social">
+    <p>
+      Follow on Instagram:
+      <a href="https://www.instagram.com/motion_mastery_academy/?hl=en" target="_blank">
+        @motion_mastery_academy
+      </a>
+    </p>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 Motion Mastery Soccer Academy</p>
+</footer>
+
+</body>
+</html>

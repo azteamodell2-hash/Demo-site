@@ -252,6 +252,37 @@ section, div[id] {
       width: 100%;
     }
 
+/* Fix section scroll position on mobile */
+@media screen and (max-width: 768px) {
+  section {
+    scroll-margin-top: 70px; /* adjust for mobile nav height */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #0b0b0b; /* matches header */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .top-nav {
+    padding: 8px 0; /* shrink nav vertically */
+  }
+
+  .top-nav a {
+    font-size: 12px; /* smaller font for buttons */
+    padding: 6px 8px; /* less spacing around each button */
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
   </style>
 </head>
 

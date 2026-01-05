@@ -37,6 +37,11 @@
       color: #f2f2f2;
       text-align: center;
     }
+/* NAV OFFSET FIX */
+section, div[id] {
+  scroll-margin-top: 90px;
+}
+
 
     /* HERO */
     header {
@@ -203,10 +208,62 @@
       border-top: 3px solid #b30000;
       font-size: 14px;
     }
+    /* TOP NAV */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(179, 0, 0, 0.6);
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+    }
+
+    .top-nav a {
+      color: #d0d0d0;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      position: relative;
+      padding: 6px 2px;
+      transition: color 0.25s ease;
+    }
+
+    .top-nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: #b30000;
+      transition: width 0.25s ease;
+    }
+
+    .top-nav a:hover {
+      color: #ffffff;
+    }
+
+    .top-nav a:hover::after {
+      width: 100%;
+    }
+
   </style>
 </head>
 
 <body>
+
+<nav class="top-nav">
+  <a href="#philosophy">Philosophy</a>
+  <a href="#homeschool">Homeschool</a>
+  <a href="#pricing">Training</a>
+  <a href="#clinics">Clinics</a>
+</nav>
+
 
 <header>
   <img src="badge.png" alt="Motion Mastery Soccer Academy Badge" class="badge">
@@ -221,7 +278,8 @@
   </p>
 
   <!-- PHILOSOPHY -->
-  <div class="philosophy">
+  <div class="philosophy" id="philosophy">
+
     <h2>Our Philosophy</h2>
 
     <p>
@@ -256,65 +314,24 @@
     </p>
   </div>
 
-  <!-- HOMESCHOOL / ESA -->
-<div class="philosophy">
-  <h2>Homeschool & ESA Families</h2>
+<!-- HOMESCHOOL -->
+<div class="philosophy" id="homeschool">
+  <h2>Homeschool-Friendly Training</h2>
 
   <p>
-    Motion Mastery Academy provides itemized receipts for all training sessions.
-    Families may submit receipts directly to their ESA or scholarship program for
-    potential reimbursement.
-  </p>
+  Motion Mastery Academy provides itemized receipts for training sessions upon request.
+  Families may submit receipts directly to their ESA or scholarship program for potential reimbursement.
+</p>
 
-  <p>
-    Reimbursement approval is handled by the family and their ESA provider.
-  </p>
+<p>
+  Reimbursement is handled by the family and their ESA or scholarship provider.
+</p>
+
 </div>
 
-<!-- ONLINE / VIRTUAL TRAINING -->
-<div class="philosophy">
-  <h2>Online Training Program</h2>
 
-  <p>
-    A structured at-home training curriculum designed to complement in-person sessions
-    or be followed independently.
-  </p>
-
-  <p>
-    The program includes guided video sessions, weekly focuses, and clear progression
-    for technical development.
-  </p>
-
-  <a href="#" class="btn">
-    View Online Training Program
-  </a>
-</div>
-
-<!-- FLYER SECTION -->
-<div class="philosophy">
-  <h2>Program Flyer</h2>
-
-  <p>
-    Download or view the Motion Mastery Academy flyer for program details and scheduling.
-  </p>
-
-  <img
-    src="actual flyer.jpg"
-    alt="Motion Mastery Academy Flyer"
-    style="
-      max-width: 700px;
-      width: 100%;
-      border: 2px solid #b30000;
-      border-radius: 10px;
-      box-shadow: 0 6px 15px rgba(179, 0, 0, 0.4);
-      margin-top: 20px;
-    "
-  >
-</div>
-
-  
 <!-- MINIMALIST PRICING SECTION – FINAL -->
-<div class="pricing-section">
+<div class="pricing-section" id="pricing">
   <h2>Training Programs</h2>
 
   <div class="pricing-grid">
@@ -353,7 +370,8 @@
   </div>
 
   <!-- CLINIC -->
-  <div class="clinic">
+  <div class="clinic" id="clinics">
+
     <h2>Upcoming Clinics</h2>
     <div class="clinic-card">
       <h3>Gilbert Clinic</h3>
@@ -386,5 +404,3 @@
 
 </body>
 </html>
-
-

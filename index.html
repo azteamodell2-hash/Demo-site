@@ -3,76 +3,43 @@
 <head>
 
   <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#b30000">
-<meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#b30000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
 
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CNCRSBPV0Z"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CNCRSBPV0Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CNCRSBPV0Z');
+  </script>
 
-  gtag('config', 'G-CNCRSBPV0Z');
-</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Motion Mastery Soccer Academy</title>
 
-  <!-- Favicon -->
   <link rel="icon" href="badge.png" type="image/png">
 
-  <!-- SEO Meta -->
-  <meta name="description" content="Motion Mastery Academy - Elite youth soccer training focused on technique, movement efficiency, and results-driven development.">
-  <meta name="keywords" content="soccer, youth soccer, soccer academy, training, Motion Mastery Academy, technique, results">
-  <meta name="author" content="Jude Odell, Motion Mastery Academy">
-
-  <!-- Open Graph for social sharing -->
-  <meta property="og:title" content="Motion Mastery Academy">
-  <meta property="og:description" content="Elite youth soccer training focused on technique, movement efficiency, and results-driven development.">
-  <meta property="og:image" content="badge.png">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://azteamodell2.github.io/motion-mastery/">
+  <!-- SEO -->
+  <meta name="description" content="Elite youth soccer training focused on efficient technique, structured development, and real results.">
+  <meta name="author" content="Jude Odell">
 
   <style>
+
+    /* GLOBAL */
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #0b0b0b 0%, #1f0000 100%);
+      background-color: #0b0b0b; /* FLAT BLACK */
       color: #f2f2f2;
       text-align: center;
     }
-/* NAV OFFSET FIX */
-section, div[id] {
-  scroll-margin-top: 90px;
-}
 
-
-    /* HERO */
-    header {
-      background:
-        linear-gradient(180deg, rgba(0,0,0,0.85), rgba(0,0,0,0.95)),
-        radial-gradient(circle at top, rgba(179,0,0,0.4), transparent 70%);
-      padding: 60px 20px 50px;
-      border-bottom: 3px solid #b30000;
-    }
-
-    .badge {
-      width: 420px;
-      max-width: 90%;
-      height: auto;
-      margin-bottom: 20px;
-    }
-
-    header h1 {
-      margin: 10px 0 0;
-      font-size: 38px;
-      letter-spacing: 1px;
-    }
-
-    main {
-      padding: 50px 20px;
+    section, div[id] {
+      scroll-margin-top: 90px;
     }
 
     h2 {
@@ -81,10 +48,58 @@ section, div[id] {
     }
 
     p {
-      max-width: 700px;
+      max-width: 750px;
       margin: 0 auto 25px;
       font-size: 16px;
-      line-height: 1.6;
+      line-height: 1.65;
+    }
+
+    /* NAV */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(0,0,0,0.9);
+      border-bottom: 1px solid #b30000;
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      gap: 26px;
+    }
+
+    .top-nav a {
+      color: #d0d0d0;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.25s ease;
+    }
+
+    .top-nav a:hover {
+      color: #ffffff;
+    }
+
+    /* HERO */
+    header {
+      padding: 60px 20px 50px;
+      border-bottom: 3px solid #b30000;
+      background-color: #0b0b0b;
+    }
+
+    .badge {
+      width: 420px;
+      max-width: 90%;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 38px;
+      margin: 10px 0 0;
+    }
+
+    main {
+      padding: 50px 20px;
     }
 
     /* BUTTON */
@@ -108,30 +123,25 @@ section, div[id] {
       transform: scale(1.05);
     }
 
-    /* PHILOSOPHY */
+    /* SECTION DIVIDER STYLE */
     .philosophy {
       margin-top: 70px;
-      padding-top: 40px;
+      padding: 50px 20px;
       border-top: 2px solid #b30000;
-    }
-
-    .signature {
-      margin-top: 35px;
-      font-size: 15px;
-      opacity: 0.9;
+      border-bottom: 2px solid #b30000;
     }
 
     /* PRICING */
     .pricing-section {
       margin-top: 70px;
+      padding-top: 50px;
       border-top: 2px solid #b30000;
-      padding-top: 40px;
     }
 
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
+      gap: 30px;
       max-width: 1000px;
       margin: 0 auto;
     }
@@ -139,91 +149,53 @@ section, div[id] {
     .price-card {
       background: linear-gradient(145deg, #1a1a1a, #0e0e0e);
       border: 2px solid #b30000;
-      border-radius: 12px;
-      padding: 25px;
+      border-radius: 14px;
+      padding: 30px;
       text-align: left;
-      box-shadow: 0 6px 15px rgba(179, 0, 0, 0.4);
-      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 8px 20px rgba(179,0,0,0.45);
+      transition: transform 0.3s ease;
     }
 
     .price-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 25px rgba(179, 0, 0, 0.6);
+      transform: translateY(-6px);
     }
 
     .price-card h3 {
       color: #ff2a2a;
-      margin-bottom: 10px;
       text-align: center;
+      margin-bottom: 15px;
       text-transform: uppercase;
-      letter-spacing: 1px;
     }
 
     .price-card ul {
       list-style: none;
       padding: 0;
       font-size: 15px;
-    }
-
-    .price-card li {
-      padding: 8px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      line-height: 1.9;
     }
 
     /* CLINIC */
     .clinic {
       margin-top: 70px;
-      padding-top: 30px;
+      padding-top: 50px;
       border-top: 2px solid #b30000;
     }
 
     .clinic-card {
       max-width: 420px;
       margin: 25px auto;
-      padding: 25px;
+      padding: 30px;
       background: linear-gradient(145deg, #1a1a1a, #0e0e0e);
       border: 2px solid #b30000;
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(179, 0, 0, 0.4);
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(179,0,0,0.45);
     }
 
     .clinic-card h3 {
       color: #ff2a2a;
     }
 
-    /* CONTACT */
-    .contact {
-      margin-top: 60px;
-      font-size: 15px;
-    }
-
-    .social {
-      margin-top: 15px;
-    }
-
-    .social a {
-      color: #ff2a2a;
-      font-weight: bold;
-      text-decoration: none;
-    }
-.reviews {
-  margin-top: 15px;
-  font-size: 15px;
-}
-
-.reviews a {
-  color: #ff2a2a;
-  font-weight: bold;
-  text-decoration: none;
-  transition: color 0.25s ease;
-}
-
-.reviews a:hover {
-  color: #ffffff;
-  text-decoration: underline;
-}
-
-
+    /* FOOTER */
     footer {
       background-color: black;
       padding: 20px;
@@ -231,152 +203,6 @@ section, div[id] {
       border-top: 3px solid #b30000;
       font-size: 14px;
     }
-    /* TOP NAV */
-    .top-nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(6px);
-      border-bottom: 1px solid rgba(179, 0, 0, 0.6);
-      padding: 10px 0;
-      display: flex;
-      justify-content: center;
-      gap: 28px;
-    }
-
-    .top-nav a {
-      color: #d0d0d0;
-      text-decoration: none;
-      font-size: 14px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      position: relative;
-      padding: 6px 2px;
-      transition: color 0.25s ease;
-    }
-
-    .top-nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -6px;
-      width: 0;
-      height: 2px;
-      background: #b30000;
-      transition: width 0.25s ease;
-    }
-
-    .top-nav a:hover {
-      color: #ffffff;
-    }
-
-    .top-nav a:hover::after {
-      width: 100%;
-    }
-
-/* Fix section scroll position on mobile */
-@media screen and (max-width: 768px) {
-  section {
-    scroll-margin-top: 70px; /* adjust for mobile nav height */
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .top-nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: #0b0b0b; /* matches header */
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .top-nav {
-    padding: 8px 0; /* shrink nav vertically */
-  }
-
-  .top-nav a {
-    font-size: 12px; /* smaller font for buttons */
-    padding: 6px 8px; /* less spacing around each button */
-  }
-}
-
-html {
-  scroll-behavior: smooth;
-}
-@media screen and (max-width: 480px) {
-  /* Make top nav wrap if buttons don't fit */
-  .top-nav {
-    display: flex;
-    flex-wrap: wrap;  /* allows buttons to go to next line */
-    justify-content: center;  /* center align */
-    padding: 8px 0;
-    background-color: #0b0b0b; /* ensures nav is visible */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-
-  .top-nav a {
-    font-size: 12px;       /* smaller text for mobile */
-    padding: 6px 10px;     /* smaller padding */
-    margin: 2px;            /* small spacing between buttons */
-  }
-}
-
-/* APP INSTALL BAR */
-#appBar {
-  position: sticky;
-  bottom: 0;
-  width: 100%;
-  background: linear-gradient(90deg, #0b0b0b, #1f0000);
-  border-top: 2px solid #b30000;
-  padding: 12px 10px;
-  z-index: 999;
-}
-
-.app-bar-content {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.app-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 8px;
-}
-
-.app-text {
-  text-align: left;
-  flex: 1;
-  font-size: 14px;
-}
-
-.app-text span {
-  display: block;
-  font-size: 12px;
-  opacity: 0.8;
-}
-
-.app-install-btn {
-  background: #b30000;
-  color: white;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 6px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.app-install-btn:hover {
-  background: black;
-  color: #ff2a2a;
-}
 
   </style>
 </head>
@@ -385,232 +211,15 @@ html {
 
 <nav class="top-nav">
   <a href="#philosophy">Philosophy</a>
-  <a href="#homeschool">Homeschool</a>
-  <a href="#pricing">Training</a>
-  <a href="#clinics">Clinics</a>
+  <a href="training.html">Training</a>
   <a href="testimonials.html">Testimonials</a>
 </nav>
 
-
-
 <header>
-  <img src="badge.png" alt="Motion Mastery Soccer Academy Badge" class="badge">
+  <img src="badge.png" class="badge" alt="Motion Mastery Badge">
   <h1>Motion Mastery Soccer Academy</h1>
 </header>
 
 <main>
-  <h2>Elite Soccer Training</h2>
-  <p>
-    Personalized training designed to accelerate results, sharpen technique,
-    and translate skills directly into game performance.
-  </p>
 
-  <!-- PHILOSOPHY -->
-  <div class="philosophy" id="philosophy">
-
-    <h2>Our Philosophy</h2>
-
-    <p>
-      Across every level of the game, from grassroots soccer to the highest youth standards, the same development pattern appears again and again: improvement through sheer volume. More reps. More sessions. More hours. This approach is widely accepted, and while it can work, it often requires far more time than necessary to produce meaningful progress.
-    </p>
-
-    <p>I followed that path myself.</p>
-
-    <p>
-      Over the course of my playing career, I accumulated well over 2,000 hours of shooting practice. For much of that time, improvement came slowly and inconsistently—not because of a lack of effort, but because repetition came before understanding. It wasn’t until the final phase of my development that I began to truly study technique, body mechanics, and movement efficiency. In that relatively short period, my consistency and execution improved exponentially.
-    </p>
-
-    <p>
-      That experience reshaped how I view training.
-    </p>
-
-    <p>
-      Certain aspects of the game, particularly ball mastery and comfort in possession, naturally demand time and repetition. While training methods can be optimized, there are no real shortcuts to developing feel, creativity, and confidence on the ball. Those qualities are earned through consistent exposure and experience.
-    </p>
-
-    <p>
-      Kicking mechanics, however, are different. Shooting and weak-foot development are highly technical movements where efficiency matters. Without proper structure, repetition alone becomes inefficient, and small mechanical flaws compound over thousands of reps. When players first understand how their body moves, how force is generated, and how technique influences outcome, repetition finally becomes productive instead of wasteful.
-    </p>
-
-    <p>
-      At Motion Mastery, the focus is on doing the work up front. Proper mechanics are built consciously before they are repeated endlessly. From there, training shifts toward turning correct movement into muscle memory and embedding it into the subconscious. When players train with awareness first and volume second, progress accelerates. Time is saved. Confidence grows. And every rep has intent.
-    </p>
-
-    <p class="signature">
-      This is the foundation of Motion Mastery Academy.<br><br>
-      — Jude Odell, Founder
-    </p>
-  </div>
-
-<!-- HOMESCHOOL -->
-<div class="philosophy" id="homeschool">
-  <h2>Homeschool-Friendly Training</h2>
-
-  <p>
-  Motion Mastery Academy provides itemized receipts for training sessions upon request.
-  Families may submit receipts directly to their ESA or scholarship program for potential reimbursement.
-</p>
-
-<p>
-  Reimbursement is handled by the family and their ESA or scholarship provider.
-</p>
-
-</div>
-
-<div class="philosophy">
-  <h2>Training Built for Real Development</h2>
-
-  <p>
-    Motion Mastery offers structured private training and clinics
-    designed to improve technique, confidence, and execution
-    in real game situations.
-  </p>
-
-  <a href="training.html" class="btn">
-    View Training Programs
-  </a>
-</div>
-
-  
-<!-- MINIMALIST PRICING SECTION – FINAL -->
-<div class="pricing-section" id="pricing">
-  <h2>Training Programs</h2>
-
-  <div class="pricing-grid">
-    <!-- SOLO PACKAGES -->
-    <div class="price-card">
-      <h3>One-on-One Program</h3>
-      <ul style="padding-left:0; list-style:none; line-height:1.8;">
-        <li>3-Session: $150 total | $50/session</li>
-        <li>5-Session: $225 total | $45/session</li>
-        <li>8-Session: $340 total | $42.50/session</li>
-        <li>10-Session: $400 total | $40/session</li>
-      </ul>
-    </div>
-
-    <!-- 2-PLAYER PACKAGES -->
-    <div class="price-card">
-      <h3>Semi-Private Program (2 Players)</h3>
-      <ul style="padding-left:0; list-style:none; line-height:1.8;">
-        <li>3-Session: $240 total | $40/session per player</li>
-        <li>5-Session: $360 total | $36/session per player</li>
-        <li>8-Session: $544 total | $34/session per player</li>
-        <li>10-Session: $640 total | $32/session per player</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-  <!-- PRIVATE TRAINING BUTTON -->
-  <div style="margin-top:50px;">
-    <a
-      href="https://docs.google.com/forms/d/1bLQdMSfD1vNv1mFrJyQw4PBv66g4ArOKwQLSz3_Wkp8/edit"
-      target="_blank"
-      class="btn">
-      Private Training Registration
-    </a>
-  </div>
-
-  <!-- CLINIC -->
-  <div class="clinic" id="clinics">
-
-    <h2>Upcoming Clinics</h2>
-    <div class="clinic-card">
-      <h3>Gilbert Clinic</h3>
-      <p>
-        High-intensity 3-day clinic focused on shooting, ball mastery,
-        and competitive play.
-      </p>
-      <p><strong>$20 per day • $50 full clinic</strong></p>
-    </div>
-  </div>
-
-<div class="philosophy" style="border-bottom: 2px solid #b30000; padding-bottom: 50px;">
-  <h2>Trusted by Parents. Proven by Results.</h2>
-
-  <p>
-    Families consistently report rapid improvement in technique,
-    confidence, and game performance — often within just a few sessions.
-  </p>
-
-  <a href="testimonials.html" class="btn">
-    Read Parent Reviews
-  </a>
-</div>
-
-
-
-  
-  <div class="contact">
-    <p>Email: motionmastery2025@gmail.com</p>
-    <p>Phone: 480-688-4134</p>
-  </div>
-
-  <div class="social">
-    <p>
-      Follow on Instagram:
-      <a href="https://www.instagram.com/motion_mastery_academy/?hl=en" target="_blank">
-        @motion_mastery_academy
-      </a>
-    </p>
-  </div>
-<div class="reviews">
-  <p>
-    Enjoyed training with us?
-    <a href="https://g.page/r/CXuVubA5rKGcEBM/review" target="_blank">
-      Leave a Google Review
-    </a>
-  </p>
-</div>
-
-</main>
-
-<footer>
-  <p>&copy; 2025 Motion Mastery Soccer Academy</p>
-<!-- APP INSTALL BAR -->
-<div id="appBar">
-  <div class="app-bar-content">
-    <img src="badge.png" alt="App Icon" class="app-icon">
-    <div class="app-text">
-      <strong>Motion Mastery App</strong>
-      <span>Train faster. Access anytime.</span>
-    </div>
-    <button id="installBtn" class="app-install-btn">
-      Get App
-    </button>
-  </div>
-</div>
-
-</footer>
-
- <script>
-let deferredPrompt;
-const installBtn = document.getElementById("installBtn");
-
-window.addEventListener("beforeinstallprompt", (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-});
-
-installBtn.addEventListener("click", async () => {
-  if (deferredPrompt) {
-    deferredPrompt.prompt();
-    deferredPrompt = null;
-  } else {
-    alert(
-      "To install on iPhone:\n\n1. Tap the Share icon\n2. Select 'Add to Home Screen'"
-    );
-  }
-});
-
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("service-worker.js");
-}
-</script>
-
-
-</body>
-</html>
-
-
-
+  <h2>Elite Soccer Tr

@@ -1,66 +1,62 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#b30000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CNCRSBPV0Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-CNCRSBPV0Z');
+  </script>
+
   <meta charset="UTF-8">
-  <title>Training & Clinics | Motion Mastery Soccer Academy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="badge.png">
+  <title>Training & Clinics | Motion Mastery Soccer Academy</title>
+
+  <link rel="icon" href="badge.png" type="image/png">
 
   <style>
+    /* === BODY & GLOBAL === */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #0b0b0b 0%, #1f0000 100%);
+      background-color: #0b0b0b; /* flat black */
       color: #f2f2f2;
       text-align: center;
     }
-
-    .top-nav {
-      position: sticky;
-      top: 0;
-      background: rgba(0,0,0,0.9);
-      padding: 12px 0;
-      display: flex;
-      justify-content: center;
-      gap: 28px;
-      border-bottom: 2px solid #b30000;
-      z-index: 1000;
+    section, div[id] {
+      scroll-margin-top: 90px;
     }
 
-    .top-nav a {
-      color: #d0d0d0;
-      text-decoration: none;
-      text-transform: uppercase;
-      font-size: 14px;
-      letter-spacing: 1px;
-    }
-
-    .top-nav a:hover {
-      color: white;
-    }
-
+    /* === HERO HEADER === */
     header {
-      padding: 70px 20px 50px;
+      background-color: #0b0b0b; /* flat black */
+      padding: 60px 20px 50px;
       border-bottom: 3px solid #b30000;
     }
 
+    .badge {
+      width: 420px;
+      max-width: 90%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
     header h1 {
-      margin-bottom: 12px;
+      margin: 10px 0 0;
       font-size: 38px;
+      letter-spacing: 1px;
     }
 
-    header p {
-      max-width: 750px;
-      margin: 0 auto;
-      font-size: 16px;
-      opacity: 0.9;
-      line-height: 1.6;
-    }
-
-    section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 60px 20px;
+    main {
+      padding: 50px 20px;
     }
 
     h2 {
@@ -69,36 +65,67 @@
     }
 
     p {
-      max-width: 750px;
-      margin: 0 auto 30px;
-      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto 25px;
       font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* BUTTON */
+    .btn {
+      display: inline-block;
+      padding: 16px 34px;
+      background-color: #b30000;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      border: 2px solid black;
+      transition: all 0.25s ease;
+      margin: 10px;
+    }
+
+    .btn:hover {
+      background-color: black;
+      color: #ff2a2a;
+      border-color: #b30000;
+      transform: scale(1.05);
     }
 
     /* PRICING */
+    .pricing-section {
+      margin-top: 70px;
+      border-top: 2px solid #b30000;
+      padding-top: 40px;
+    }
+
     .pricing-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
+      gap: 25px;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     .price-card {
       background: linear-gradient(145deg, #1a1a1a, #0e0e0e);
       border: 2px solid #b30000;
-      border-radius: 14px;
-      padding: 30px;
-      box-shadow: 0 8px 20px rgba(179,0,0,0.45);
-      transition: transform 0.3s ease;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: left;
+      box-shadow: 0 6px 15px rgba(179, 0, 0, 0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .price-card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(179, 0, 0, 0.6);
     }
 
     .price-card h3 {
       color: #ff2a2a;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
+      text-align: center;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
@@ -107,58 +134,104 @@
       list-style: none;
       padding: 0;
       font-size: 15px;
-      line-height: 1.9;
     }
 
-    /* CLINICS */
+    .price-card li {
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* CLINIC */
+    .clinic {
+      margin-top: 70px;
+      padding-top: 30px;
+      border-top: 2px solid #b30000;
+    }
+
     .clinic-card {
       max-width: 420px;
-      margin: 30px auto 0;
-      padding: 30px;
+      margin: 25px auto;
+      padding: 25px;
       background: linear-gradient(145deg, #1a1a1a, #0e0e0e);
       border: 2px solid #b30000;
-      border-radius: 14px;
-      box-shadow: 0 8px 20px rgba(179,0,0,0.45);
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(179, 0, 0, 0.4);
     }
 
     .clinic-card h3 {
       color: #ff2a2a;
-      margin-bottom: 10px;
     }
 
-    /* CTA */
-    .cta {
-      border-top: 2px solid #b30000;
-      padding-top: 50px;
-      margin-top: 70px;
+    /* CONTACT */
+    .contact {
+      margin-top: 60px;
+      font-size: 15px;
     }
 
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 16px 36px;
-      background: #b30000;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 6px;
-      transition: all 0.25s ease;
-      border: 2px solid black;
+    .social {
+      margin-top: 15px;
     }
 
-    .btn:hover {
-      background: black;
+    .social a {
       color: #ff2a2a;
-      border-color: #b30000;
-      transform: scale(1.05);
+      font-weight: bold;
+      text-decoration: none;
     }
 
     footer {
-      background: black;
+      background-color: black;
       padding: 20px;
-      border-top: 2px solid #b30000;
+      margin-top: 60px;
+      border-top: 3px solid #b30000;
       font-size: 14px;
-      margin-top: 70px;
+    }
+
+    /* TOP NAV */
+    .top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(179, 0, 0, 0.6);
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+    }
+
+    .top-nav a {
+      color: #d0d0d0;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      position: relative;
+      padding: 6px 2px;
+      transition: color 0.25s ease;
+    }
+
+    .top-nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: #b30000;
+      transition: width 0.25s ease;
+    }
+
+    .top-nav a:hover {
+      color: #ffffff;
+    }
+
+    .top-nav a:hover::after {
+      width: 100%;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
@@ -167,83 +240,121 @@
 
 <nav class="top-nav">
   <a href="index.html">Home</a>
-  <a href="training.html">Training</a>
+  <a href="#pricing">Training</a>
+  <a href="#clinics">Clinics</a>
   <a href="testimonials.html">Testimonials</a>
 </nav>
 
 <header>
+  <img src="badge.png" alt="Motion Mastery Soccer Academy Badge" class="badge">
   <h1>Training & Clinics</h1>
-  <p>
-    Motion Mastery training is designed for players who want
-    intentional development, efficient mechanics, and real
-    results that translate directly to match play.
-  </p>
 </header>
 
-<section>
-  <h2>Private Training Programs</h2>
+<main>
+  <h2>Training Programs</h2>
   <p>
-    Sessions are structured, technical, and personalized.
-    Players first learn *why* a movement works before
-    reinforcing it through repetition.
+    Motion Mastery offers structured private training and clinics
+    designed to improve technique, confidence, and execution
+    in real game situations.
   </p>
 
-  <div class="pricing-grid">
-
-    <div class="price-card">
-      <h3>One-on-One Training</h3>
-      <ul>
-        <li>3 Sessions — $150 total ($50/session)</li>
-        <li>5 Sessions — $225 total ($45/session)</li>
-        <li>8 Sessions — $340 total ($42.50/session)</li>
-        <li>10 Sessions — $400 total ($40/session)</li>
-      </ul>
+  <div class="pricing-section" id="pricing">
+    <div class="pricing-grid">
+      <div class="price-card">
+        <h3>One-on-One Program</h3>
+        <ul>
+          <li>3-Session: $150 total | $50/session</li>
+          <li>5-Session: $225 total | $45/session</li>
+          <li>8-Session: $340 total | $42.50/session</li>
+          <li>10-Session: $400 total | $40/session</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <h3>Semi-Private Program (2 Players)</h3>
+        <ul>
+          <li>3-Session: $240 total | $40/session per player</li>
+          <li>5-Session: $360 total | $36/session per player</li>
+          <li>8-Session: $544 total | $34/session per player</li>
+          <li>10-Session: $640 total | $32/session per player</li>
+        </ul>
+      </div>
     </div>
-
-    <div class="price-card">
-      <h3>Semi-Private (2 Players)</h3>
-      <ul>
-        <li>3 Sessions — $240 total ($40/session per player)</li>
-        <li>5 Sessions — $360 total ($36/session per player)</li>
-        <li>8 Sessions — $544 total ($34/session per player)</li>
-        <li>10 Sessions — $640 total ($32/session per player)</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-<section style="border-top:2px solid #b30000;">
-  <h2>Clinics</h2>
-  <p>
-    Clinics provide high-intensity group training focused on
-    specific technical themes and competitive execution.
-  </p>
-
-  <div class="clinic-card">
-    <h3>Gilbert Clinic</h3>
-    <p>
-      3-day clinic emphasizing shooting, ball mastery,
-      and competitive play.
-    </p>
-    <p><strong>$20 per day • $50 full clinic</strong></p>
   </div>
 
-  <div class="cta">
-    <h2>Ready to Get Started?</h2>
-    <p>Train with structure. Improve with intent.</p>
+  <div style="margin-top:50px;">
     <a
       href="https://docs.google.com/forms/d/1bLQdMSfD1vNv1mFrJyQw4PBv66g4ArOKwQLSz3_Wkp8/edit"
       target="_blank"
       class="btn">
-      Register for Training
+      Private Training Registration
     </a>
   </div>
-</section>
+
+  <div class="clinic" id="clinics">
+    <h2>Upcoming Clinics</h2>
+    <div class="clinic-card">
+      <h3>Gilbert Clinic</h3>
+      <p>High-intensity 3-day clinic focused on shooting, ball mastery, and competitive play.</p>
+      <p><strong>$20 per day • $50 full clinic</strong></p>
+    </div>
+  </div>
+
+  <div class="contact">
+    <p>Email: motionmastery2025@gmail.com</p>
+    <p>Phone: 480-688-4134</p>
+  </div>
+
+  <div class="social">
+    <p>
+      Follow on Instagram:
+      <a href="https://www.instagram.com/motion_mastery_academy/?hl=en" target="_blank">
+        @motion_mastery_academy
+      </a>
+    </p>
+  </div>
+
+</main>
 
 <footer>
   <p>&copy; 2025 Motion Mastery Soccer Academy</p>
+  <div id="appBar">
+    <div class="app-bar-content">
+      <img src="badge.png" alt="App Icon" class="app-icon">
+      <div class="app-text">
+        <strong>Motion Mastery App</strong>
+        <span>Train faster. Access anytime.</span>
+      </div>
+      <button id="installBtn" class="app-install-btn">
+        Get App
+      </button>
+    </div>
+  </div>
 </footer>
+
+<script>
+let deferredPrompt;
+const installBtn = document.getElementById("installBtn");
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+});
+
+installBtn.addEventListener("click", async () => {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    deferredPrompt = null;
+  } else {
+    alert(
+      "To install on iPhone:\n\n1. Tap the Share icon\n2. Select 'Add to Home Screen'"
+    );
+  }
+});
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
+</script>
 
 </body>
 </html>

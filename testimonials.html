@@ -44,6 +44,10 @@
       border-bottom: 2px solid #b30000;
     }
 
+    header h1 {
+      margin-bottom: 10px;
+    }
+
     header p {
       max-width: 700px;
       margin: 0 auto;
@@ -75,6 +79,49 @@
     .testimonial-card p {
       font-style: italic;
       line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .testimonial-card span {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #ff2a2a;
+    }
+
+    .cta {
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 2px solid #b30000;
+      text-align: center;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 16px 36px;
+      background: #b30000;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: all 0.25s ease;
+      border: 2px solid black;
+    }
+
+    .btn:hover {
+      background: black;
+      color: #ff2a2a;
+      border-color: #b30000;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: black;
+      padding: 20px;
+      border-top: 2px solid #b30000;
+      font-size: 14px;
+      margin-top: 60px;
     }
   </style>
 </head>
@@ -83,45 +130,65 @@
 
 <nav class="top-nav">
   <a href="index.html">Home</a>
-  <a href="training.html">Training</a>
   <a href="testimonials.html">Testimonials</a>
 </nav>
 
 <header>
-  <h1>Parent Testimonials</h1>
-  <p>Real feedback from families who’ve trained with Motion Mastery.</p>
+  <h1>What Parents Are Saying</h1>
+  <p>Real families. Honest feedback. Proven development.</p>
 </header>
 
 <main>
 
+  <!-- ANDREA -->
   <div class="testimonial-card">
     <div class="stars">★★★★★</div>
     <p>
-      Jude has made a huge impact on our son’s confidence and technical ability.
-      The improvement after just a few sessions was obvious.
+      “I have had two daughters train with Jude. I personally saw more skill
+      advancement training with him in weeks than I saw from their club soccer
+      coach that entire season. His training schedule was flexible and dependable;
+      great for our homeschool schedule and he always made training fun and
+      rewarding for the girls. We will definitely be back for training in the
+      off season and in preparation for tryouts again.”
     </p>
-    <strong>— Andreas</strong>
+    <span>— Andrea D.</span>
   </div>
 
+  <!-- NICOLE -->
   <div class="testimonial-card">
     <div class="stars">★★★★★</div>
     <p>
-      The sessions are focused, professional, and very effective.
-      We highly recommend Motion Mastery to any serious player.
+      “Jude 10/10! Super great with my daughter. Adapted the drills based on her
+      skill level and needs. He also made it super fun too.”
     </p>
-    <strong>— Nicole</strong>
+    <span>— Nicole C.</span>
   </div>
 
+  <!-- KAREN -->
   <div class="testimonial-card">
     <div class="stars">★★★★★</div>
     <p>
-      Jude is incredibly knowledgeable and patient.
-      Our daughter looks forward to every session.
+      “I highly recommend Jude as a coach. My son would come home after every
+      session with a new bit of knowledge towards his game. Taking his potential
+      to a whole new level which eventually led my son to a Europe Super Draft.
+      Jude is patient, motivating, and very knowledgeable. He took the time to
+      explain, correct, and push so that he could reach his full potential.
+      We are very thankful for his support and training. Excellent program!”
     </p>
-    <strong>— Karen</strong>
+    <span>— Karen G.</span>
+  </div>
+
+  <div class="cta">
+    <h2>Ready to Train With Purpose?</h2>
+    <p>Structured sessions. Clear feedback. Measurable progress.</p>
+    <a href="index.html#pricing" class="btn">View Training Programs</a>
   </div>
 
 </main>
+
+<footer>
+  <p>&copy; 2025 Motion Mastery Soccer Academy</p>
+</footer>
 
 </body>
 </html>

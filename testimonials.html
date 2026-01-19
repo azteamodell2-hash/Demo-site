@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Testimonials | Motion Mastery Soccer Academy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="icon" href="badge.png">
 
   <style>
@@ -25,6 +24,7 @@
       justify-content: center;
       gap: 28px;
       border-bottom: 2px solid #b30000;
+      z-index: 1000;
     }
 
     .top-nav a {
@@ -32,6 +32,7 @@
       text-decoration: none;
       text-transform: uppercase;
       font-size: 14px;
+      letter-spacing: 1px;
     }
 
     .top-nav a:hover {
@@ -39,36 +40,80 @@
     }
 
     header {
-      padding: 50px 20px;
+      padding: 60px 20px 40px;
       border-bottom: 2px solid #b30000;
+    }
+
+    header h1 {
+      margin-bottom: 10px;
+    }
+
+    header p {
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.9;
     }
 
     main {
       max-width: 900px;
       margin: 0 auto;
-      padding: 40px 20px;
+      padding: 50px 20px;
     }
 
     .testimonial-card {
       background: linear-gradient(145deg, #1a1a1a, #0e0e0e);
       border: 2px solid #b30000;
-      border-radius: 12px;
-      padding: 25px;
-      margin-bottom: 25px;
-      box-shadow: 0 6px 15px rgba(179,0,0,0.4);
+      border-radius: 14px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 20px rgba(179,0,0,0.45);
       text-align: left;
+    }
+
+    .stars {
+      color: #ff2a2a;
+      font-size: 18px;
+      margin-bottom: 12px;
     }
 
     .testimonial-card p {
       font-style: italic;
-      line-height: 1.6;
+      line-height: 1.7;
+      font-size: 16px;
     }
 
     .testimonial-card span {
       display: block;
-      margin-top: 12px;
+      margin-top: 15px;
       font-weight: bold;
       color: #ff2a2a;
+    }
+
+    .cta {
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 2px solid #b30000;
+      text-align: center;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 16px 36px;
+      background: #b30000;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
+      transition: all 0.25s ease;
+      border: 2px solid black;
+    }
+
+    .btn:hover {
+      background: black;
+      color: #ff2a2a;
+      border-color: #b30000;
+      transform: scale(1.05);
     }
 
     footer {
@@ -76,6 +121,7 @@
       padding: 20px;
       border-top: 2px solid #b30000;
       font-size: 14px;
+      margin-top: 60px;
     }
   </style>
 </head>
@@ -88,46 +134,48 @@
 </nav>
 
 <header>
-  <h1>Testimonials</h1>
-  <p>Real development. Real confidence. Real results.</p>
+  <h1>What Parents Are Saying</h1>
+  <p>Real families. Real development. Proven results.</p>
 </header>
 
 <main>
 
   <div class="testimonial-card">
+    <div class="stars">★★★★★</div>
     <p>
-      “We’ve worked with other trainers before, but this was the first time
-      my son truly understood *how* to strike the ball correctly.
-      His consistency improved noticeably after just a few sessions.”
+      “Jude is 10/10. He was super great with my daughter and adapted the drills
+      based on her skill level and needs. He also made every session fun,
+      which kept her fully engaged.”
     </p>
-    <span>— Parent of U14 Player</span>
+    <span>— Parent of Youth Player</span>
   </div>
 
   <div class="testimonial-card">
+    <div class="stars">★★★★★</div>
     <p>
-      “The attention to detail is what stands out.
-      Every session has structure, and every rep has a purpose.
-      You can tell there’s a real development plan behind the training.”
+      “I highly recommend Jude as a coach. My son came home after every session
+      with new knowledge that elevated his game. His development eventually
+      led to a Europe Super Draft. Jude is patient, motivating, and extremely
+      knowledgeable. Excellent program.”
     </p>
-    <span>— Parent of High School Player</span>
+    <span>— Parent of Competitive Player</span>
   </div>
 
   <div class="testimonial-card">
+    <div class="stars">★★★★★</div>
     <p>
-      “My daughter used to avoid shooting with her weaker foot.
-      After training at Motion Mastery, she now strikes confidently
-      on both sides and looks more composed in games.”
+      “I saw more skill advancement in weeks than I saw from my daughters’
+      club coach over an entire season. The schedule was flexible,
+      homeschool-friendly, and training was always fun and rewarding.
+      We will absolutely be back.”
     </p>
-    <span>— Parent of U12 Player</span>
+    <span>— Parent of U12 & U14 Players</span>
   </div>
 
-  <div class="testimonial-card">
-    <p>
-      “What impressed us most was how technical concepts were explained
-      in a way that made sense to a young player.
-      The confidence carried directly into match play.”
-    </p>
-    <span>— Parent of U13 Player</span>
+  <div class="cta">
+    <h2>Ready to See the Difference?</h2>
+    <p>Structured training. Clear development. Real results.</p>
+    <a href="index.html#pricing" class="btn">View Training Programs</a>
   </div>
 
 </main>

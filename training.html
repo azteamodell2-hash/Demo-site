@@ -125,8 +125,9 @@ header {
     }
 
     .badge {
-  width: 250px;       /* smaller base width */
-  max-width: 60%;     /* limits size on smaller screens */
+  width: 180px;       /* base width smaller */
+  max-width: 100%;    /* ensures it never overflows its container */
+  height: auto;       /* maintains aspect ratio */
   margin-bottom: 20px;
   border-radius: 20px;
   box-shadow: 0 8px 25px rgba(179,0,0,0.6);
@@ -136,6 +137,7 @@ header {
 .badge:hover {
   transform: scale(1.05);
 }
+
 
 
     header h1 {

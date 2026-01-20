@@ -231,97 +231,61 @@ section, div[id] {
       border-top: 3px solid #b30000;
       font-size: 14px;
     }
-    /* TOP NAV */
-    .top-nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(0, 0, 0, 0.85);
-      backdrop-filter: blur(6px);
-      border-bottom: 1px solid rgba(179, 0, 0, 0.6);
-      padding: 10px 0;
-      display: flex;
-      justify-content: center;
-      gap: 28px;
-    }
-
-    .top-nav a {
-      color: #d0d0d0;
-      text-decoration: none;
-      font-size: 14px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      position: relative;
-      padding: 6px 2px;
-      transition: color 0.25s ease;
-    }
-
-    .top-nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -6px;
-      width: 0;
-      height: 2px;
-      background: #b30000;
-      transition: width 0.25s ease;
-    }
-
-    .top-nav a:hover {
-      color: #ffffff;
-    }
-
-    .top-nav a:hover::after {
-      width: 100%;
-    }
-
-/* Fix section scroll position on mobile */
-@media screen and (max-width: 768px) {
-  section {
-    scroll-margin-top: 70px; /* adjust for mobile nav height */
-  }
+   /* =================== TOP NAV (GLOBAL STANDARD) =================== */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(179, 0, 0, 0.6);
 }
 
-@media screen and (max-width: 768px) {
-  .top-nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: #0b0b0b; /* matches header */
-  }
+.top-nav a {
+  color: #d0d0d0;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  padding: 6px 2px;
+  transition: color 0.25s ease;
 }
 
+.top-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #b30000;
+  transition: width 0.25s ease;
+}
+
+.top-nav a:hover {
+  color: #ffffff;
+}
+
+.top-nav a:hover::after {
+  width: 100%;
+}
+
+/* Mobile */
 @media screen and (max-width: 480px) {
   .top-nav {
-    padding: 8px 0; /* shrink nav vertically */
-  }
-
-  .top-nav a {
-    font-size: 12px; /* smaller font for buttons */
-    padding: 6px 8px; /* less spacing around each button */
-  }
-}
-
-html {
-  scroll-behavior: smooth;
-}
-@media screen and (max-width: 480px) {
-  /* Make top nav wrap if buttons don't fit */
-  .top-nav {
-    display: flex;
-    flex-wrap: wrap;  /* allows buttons to go to next line */
-    justify-content: center;  /* center align */
+    flex-wrap: wrap;
     padding: 8px 0;
-    background-color: #0b0b0b; /* ensures nav is visible */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
   }
 
   .top-nav a {
-    font-size: 12px;       /* smaller text for mobile */
-    padding: 6px 10px;     /* smaller padding */
-    margin: 2px;            /* small spacing between buttons */
+    font-size: 12px;
+    padding: 6px 10px;
+    margin: 2px;
   }
 }
 
@@ -562,6 +526,7 @@ if ("serviceWorker" in navigator) {
 
 </body>
 </html>
+
 
 
 

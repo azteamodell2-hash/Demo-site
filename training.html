@@ -107,20 +107,23 @@
 
 
     /* =================== HEADER =================== */
-.header-small {
-  background: #0b0b0b;        
-  padding: 40px 20px 30px;    
-  text-align: center;
-}
-
+/* Small but visible badge */
 .badge-small {
-  width: 120px;               
-  height: auto;               
-  margin-bottom: 15px;
+  width: 180px;       /* adjust this number for final size */
+  max-width: 50%;     /* ensures it scales on small screens */
+  height: auto;
+  margin-bottom: 20px;
   border-radius: 20px;
   box-shadow: 0 6px 20px rgba(179,0,0,0.6);
   transition: transform 0.3s;
 }
+
+.header-small {
+  background: #0b0b0b;
+  padding: 50px 20px 40px; /* top / sides / bottom */
+  text-align: center;
+}
+
 
 .badge-small:hover {
   transform: scale(1.05);
@@ -322,8 +325,9 @@
 <header class="header-small">
   <img src="badge.png" alt="Motion Mastery Soccer Academy Badge" class="badge-small">
   <h1>Training & Clinics</h1>
-  <a href="https://docs.google.com/forms/d/1bLQdMSfD1vNv1mFrJyQw4PBv66g4ArOKwQLSz3_Wkp8/edit" class="btn-primary" target="_blank">Book Your Training</a>
+  <a href="https://docs.google.com/forms/d/..." class="btn-primary" target="_blank">Book Your Training</a>
 </header>
+
 
 
   <!-- Main Content -->

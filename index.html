@@ -36,6 +36,34 @@
 
   <style>
 
+.philosophy-toggle {
+  background: #b30000;
+  color: white;
+  border: 2px solid black;
+  padding: 12px 26px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 18px auto 10px;
+  display: inline-block;
+  transition: all 0.25s ease;
+}
+
+.philosophy-toggle:hover {
+  background: black;
+  color: #ff2a2a;
+  border-color: #b30000;
+  transform: scale(1.05);
+}
+
+.philosophy-content {
+  display: none;
+  max-width: 720px;
+  margin: 30px auto 0;
+}
+
+    
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -354,7 +382,23 @@ section, div[id] {
 
   </style>
 </head>
+  
+<script>
+function togglePhilosophy() {
+  const content = document.querySelector(".philosophy-content");
+  const btn = document.querySelector(".philosophy-toggle");
 
+  if (content.style.display === "block") {
+    content.style.display = "none";
+    btn.textContent = "Read Our Philosophy";
+  } else {
+    content.style.display = "block";
+    btn.textContent = "Hide Philosophy";
+  }
+}
+</script>
+
+  
 <body>
 
 <nav class="top-nav">
@@ -382,7 +426,12 @@ section, div[id] {
   <div class="philosophy" id="philosophy">
 
     <h2>Our Philosophy</h2>
+    
+<button class="philosophy-toggle" onclick="togglePhilosophy()">
+  Read Our Philosophy
+</button>
 
+    <div class="philosophy-content">
     <p>
       Across every level of the game, from grassroots soccer to the highest youth standards, the same development pattern appears again and again: improvement through sheer volume. More reps. More sessions. More hours. This approach is widely accepted, and while it can work, it often requires far more time than necessary to produce meaningful progress.
     </p>
@@ -413,6 +462,7 @@ section, div[id] {
       This is the foundation of Motion Mastery Academy.<br><br>
       — Jude Odell, Founder
     </p>
+      </div>
   </div>
 
 <!-- HOMESCHOOL -->
@@ -538,6 +588,7 @@ if ("serviceWorker" in navigator) {
 
 </body>
 </html>
+
 
 
 

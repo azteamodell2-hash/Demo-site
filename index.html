@@ -36,6 +36,29 @@
 
   <style>
 
+/* Global Button Styling for homepage CTAs */
+.home-btn {
+  background: #b30000;
+  color: white;
+  border: 2px solid black;
+  padding: 14px 32px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 12px auto;
+  display: inline-block;
+  transition: all 0.25s ease;
+}
+
+.home-btn:hover {
+  background: black;
+  color: #ff2a2a;
+  border-color: #b30000;
+  transform: scale(1.05);
+}
+
+    
 .philosophy-toggle {
   background: #b30000;
   color: white;
@@ -491,7 +514,8 @@ function togglePhilosophy() {
     in real game situations.
   </p>
 
-  <a href="training.html" class="btn" style="background-color:#ff2a2a; border-color:black;">
+  <a href="training.html" class="home-btn">View Training Programs</a>
+
     View Training Programs
   </a>
 </div>
@@ -509,7 +533,7 @@ function togglePhilosophy() {
     Families consistently report rapid improvement in technique, confidence, and game performance — often within just a few sessions.
   </p>
 
-  <a href="testimonials.html" class="btn" style="background-color:#ff2a2a; border-color:black;">
+  <a href="testimonials.html" class="home-btn">Read Parent Reviews</a>
     Read Parent Reviews
   </a>
 </div>
@@ -588,6 +612,7 @@ if ("serviceWorker" in navigator) {
 
 </body>
 </html>
+
 
 
 

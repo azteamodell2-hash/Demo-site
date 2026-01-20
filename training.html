@@ -107,15 +107,19 @@
 
 
     /* =================== HEADER =================== */
+/* =================== HEADER =================== */
 header {
-  background: linear-gradient(180deg, #0b0b0b 0%, #1f0000 100%);
-  padding: 80px 20px 60px; /* top, sides, bottom */
-  border-bottom: 3px solid #b30000;
+  background: #0b0b0b;              /* dark boxed background */
+  padding: 60px 20px 40px;          /* smaller top/bottom padding like Testimonials */
+  border-bottom: 2px solid #b30000; /* thinner border matches Testimonials */
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 900px;                  /* limits the header width so badge doesn’t stretch */
+  margin: 0 auto;                    /* centers the header block */
+  border-radius: 20px;               /* subtle box effect */
+  box-shadow: 0 8px 25px rgba(179,0,0,0.5); /* soft shadow to lift the header */
+  position: relative;
 }
+
 
 
     }

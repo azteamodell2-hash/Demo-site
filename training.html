@@ -107,32 +107,38 @@
 
 
     /* =================== HEADER =================== */
-/* =================== HEADER =================== */
-header {
-  background: #0b0b0b;              /* dark boxed background */
-  padding: 60px 20px 40px;          /* smaller top/bottom padding like Testimonials */
-  border-bottom: 2px solid #b30000; /* thinner border matches Testimonials */
+.header-small {
+  background: #0b0b0b;        
+  padding: 40px 20px 30px;    
   text-align: center;
-  max-width: 900px;                  /* limits the header width so badge doesn’t stretch */
-  margin: 0 auto;                    /* centers the header block */
-  border-radius: 20px;               /* subtle box effect */
-  box-shadow: 0 8px 25px rgba(179,0,0,0.5); /* soft shadow to lift the header */
-  position: relative;
 }
 
-
-
-    }
-
-    .badge {
-  width: 180px;       /* base width smaller */
-  max-width: 100%;    /* ensures it never overflows its container */
-  height: auto;       /* maintains aspect ratio */
-  margin-bottom: 20px;
+.badge-small {
+  width: 120px;               
+  height: auto;               
+  margin-bottom: 15px;
   border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(179,0,0,0.6);
+  box-shadow: 0 6px 20px rgba(179,0,0,0.6);
   transition: transform 0.3s;
 }
+
+.badge-small:hover {
+  transform: scale(1.05);
+}
+
+.header-small h1 {
+  font-size: 32px;            
+  color: #ff2a2a;
+  letter-spacing: 1.5px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+  margin-bottom: 15px;
+}
+
+.header-small .btn-primary {
+  padding: 14px 32px;         
+  font-size: 15px;
+}
+
 
 .badge:hover {
   transform: scale(1.05);
@@ -313,11 +319,12 @@ header {
 </nav>
 
   <!-- Header -->
-  <header>
-    <img src="badge.png" alt="Motion Mastery Soccer Academy Badge" class="badge">
-    <h1>Training & Clinics</h1>
-    <a href="https://docs.google.com/forms/d/1bLQdMSfD1vNv1mFrJyQw4PBv66g4ArOKwQLSz3_Wkp8/edit" class="btn-primary" target="_blank">Book Your Training</a>
-  </header>
+<header class="header-small">
+  <img src="badge.png" alt="Motion Mastery Soccer Academy Badge" class="badge-small">
+  <h1>Training & Clinics</h1>
+  <a href="https://docs.google.com/forms/d/1bLQdMSfD1vNv1mFrJyQw4PBv66g4ArOKwQLSz3_Wkp8/edit" class="btn-primary" target="_blank">Book Your Training</a>
+</header>
+
 
   <!-- Main Content -->
   <main>

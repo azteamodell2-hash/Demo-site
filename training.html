@@ -310,6 +310,65 @@
         font-size: 15px;
       }
     }
+    /* =================== HEADER OPTIMIZED =================== */
+.header-opt {
+  background: #0b0b0b;
+  padding: 70px 20px 50px;  /* more top padding for emphasis */
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(179,0,0,0.6);
+}
+
+/* Badge optimized size */
+.badge-opt {
+  width: 220px;       /* big but not huge */
+  max-width: 60%;
+  height: auto;
+  margin-bottom: 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(179,0,0,0.6);
+  transition: transform 0.3s;
+}
+
+.badge-opt:hover {
+  transform: scale(1.05);
+}
+
+/* Header title */
+.header-opt h1 {
+  font-size: 48px;   /* larger, eye-catching */
+  color: #ff2a2a;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+  letter-spacing: 1.5px;
+  margin-bottom: 25px;
+}
+
+/* Button optimized size */
+.btn-primary-opt {
+  display: inline-block;
+  padding: 22px 50px;  /* bigger, more inviting */
+  font-size: 18px;     /* bigger text */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  background: #b30000;
+  border: 2px solid #000;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(179,0,0,0.6);
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.btn-primary-opt:hover {
+  background: #000;
+  color: #ff2a2a;
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(179,0,0,0.8);
+}
+
   </style>
 </head>
 <body>
@@ -322,11 +381,12 @@
 </nav>
 
   <!-- Header -->
-<header class="header-small">
-  <img src="badge.png" alt="Motion Mastery Soccer Academy Badge" class="badge-small">
+<header class="header-opt">
+  <img src="badge.png" alt="Motion Mastery Soccer Academy Badge" class="badge-opt">
   <h1>Training & Clinics</h1>
-  <a href="https://docs.google.com/forms/d/..." class="btn-primary" target="_blank">Book Your Training</a>
+  <a href="https://docs.google.com/forms/d/..." class="btn-primary-opt" target="_blank">Book Your Training</a>
 </header>
+
 
 
 

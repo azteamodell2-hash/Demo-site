@@ -8,227 +8,250 @@
 
 <style>
 /* ================= GLOBAL ================= */
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(180deg, #0b0b0b 0%, #1a0000 100%);
-  color: #f2f2f2;
-  overflow-x: hidden;
+  padding: 0;
 }
 
-a { text-decoration: none; }
+body {
+  font-family: 'Arial', sans-serif;
+  background: #0b0b0b;
+  color: #f2f2f2;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
 /* ================= TOP NAV ================= */
 .top-nav {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(0,0,0,0.85);
-  backdrop-filter: blur(6px);
   display: flex;
   justify-content: center;
-  gap: 28px;
-  padding: 12px 0;
-  border-bottom: 1px solid rgba(179,0,0,0.6);
+  gap: 30px;
+  background: rgba(0,0,0,0.9);
+  padding: 15px 0;
+  border-bottom: 2px solid #b30000;
   font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
+
 .top-nav a {
   color: #d0d0d0;
-  text-transform: uppercase;
   font-size: 14px;
-  letter-spacing: 1px;
   position: relative;
-  padding: 6px 2px;
-  transition: color 0.25s ease;
+  transition: all 0.3s ease;
 }
+
 .top-nav a::after {
-  content: "";
+  content: '';
   position: absolute;
-  left: 0;
-  bottom: -6px;
   width: 0;
   height: 2px;
+  bottom: -6px;
+  left: 0;
   background: #ff2a2a;
-  transition: width 0.25s ease;
+  transition: 0.3s;
 }
+
 .top-nav a:hover {
-  color: #ffffff;
+  color: #fff;
 }
+
 .top-nav a:hover::after {
   width: 100%;
 }
 
 /* ================= HERO ================= */
-header {
+.hero {
   position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  gap: 40px;
-  background: radial-gradient(circle at center, rgba(179,0,0,0.1), transparent 80%), 
-              linear-gradient(180deg, rgba(0,0,0,0.85), rgba(0,0,0,0.95));
-  padding: 80px 60px;
+  justify-content: center;
+  padding: 120px 20px 80px;
+  background: radial-gradient(circle at top left, rgba(255,42,42,0.15), transparent 70%), linear-gradient(180deg, #1a0000 0%, #0b0b0b 100%);
+  text-align: center;
   overflow: hidden;
 }
 
-header .hero-text {
-  max-width: 600px;
-}
-header h1 {
-  font-size: 40px;
-  letter-spacing: 2px;
+.hero h1 {
+  font-size: 48px;
   color: #ff2a2a;
-  text-shadow: 0 0 10px rgba(255,42,42,0.6);
-  margin: 0 0 20px 0;
-}
-header p {
-  font-size: 18px;
-  color: #f2f2f2;
-  line-height: 1.6;
-  margin: 0;
+  text-shadow: 0 0 20px rgba(255,42,42,0.5);
+  margin-bottom: 20px;
 }
 
-/* Badge positioning */
-header .badge {
-  width: 180px;
-  max-width: 180px;
-  border: 3px solid #b30000;
+.hero p {
+  font-size: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #f2f2f2;
+}
+
+/* Badge aligned in corner, straight */
+.hero .badge {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100px;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(255,42,42,0.4);
+  border: 3px solid #b30000;
+  box-shadow: 0 6px 25px rgba(255,42,42,0.4);
+  transform: rotate(0deg);
 }
 
 /* ================= SHOP INTRO ================= */
 .shop-intro {
-  max-width: 1000px;
+  max-width: 900px;
   margin: 60px auto 40px;
-  padding: 40px;
+  padding: 50px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #1b1b1b, #0f0f0f);
   border: 2px solid #b30000;
-  border-radius: 14px;
-  background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
-  box-shadow: 0 6px 15px rgba(179,0,0,0.3);
+  box-shadow: 0 10px 25px rgba(255,42,42,0.2);
   text-align: center;
+  animation: fadeIn 1s ease forwards;
 }
+
 .shop-intro h2 {
+  font-size: 34px;
   color: #ff2a2a;
-  font-size: 28px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  text-shadow: 0 0 8px rgba(255,42,42,0.6);
 }
+
 .shop-intro p {
-  font-size: 16px;
+  font-size: 17px;
   color: #ddd;
-  line-height: 1.6;
-  margin: 0 auto;
-  max-width: 700px;
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+.shop-intro .shop-disclaimer {
+  font-size: 14px;
+  color: #aaa;
+  font-style: italic;
 }
 
 /* ================= SHOP GRID ================= */
-.shop-section {
-  margin: 0 auto 80px;
-  max-width: 1200px;
-  padding: 0 20px;
-}
 .shop-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  padding: 0 20px;
 }
+
 .shop-card {
-  background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
-  border: 2px solid #b30000;
-  border-radius: 14px;
-  padding: 20px;
+  background: linear-gradient(145deg, #1a1a1a, #0e0e0e);
+  border-radius: 20px;
+  padding: 30px 20px 40px;
   text-align: center;
-  box-shadow: 0 6px 15px rgba(179,0,0,0.4);
-  transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
   overflow: hidden;
+  border: 2px solid #b30000;
+  box-shadow: 0 12px 28px rgba(255,42,42,0.4);
+  transition: all 0.4s ease;
 }
+
 .shop-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 12px 25px rgba(255,42,42,0.6);
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(255,42,42,0.6);
 }
+
 .shop-card img {
   width: 180px;
-  max-width: 90%;
-  margin-bottom: 15px;
-  transition: transform 0.3s;
-}
-.shop-card:hover img {
-  transform: translateY(-6px) rotate(-2deg) scale(1.05);
-}
-.shop-card h3 {
-  color: #ff2a2a;
-  font-size: 18px;
-  margin-bottom: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-shadow: 0 0 8px rgba(255,42,42,0.6);
-}
-.shop-card p {
-  font-size: 14px;
-  min-height: 50px;
+  height: 180px; /* fixed square dimensions */
+  object-fit: cover;
   margin-bottom: 20px;
-  color: #ddd;
-  line-height: 1.5;
+  transition: transform 0.4s ease;
 }
 
-/* Buy button linking to PayPal */
+.shop-card:hover img {
+  transform: translateY(-8px) scale(1.08) rotate(-2deg);
+}
+
+.shop-card h3 {
+  font-size: 22px;
+  color: #ff2a2a;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  text-shadow: 0 0 12px rgba(255,42,42,0.5);
+}
+
+.shop-card p {
+  font-size: 15px;
+  color: #ddd;
+  margin-bottom: 25px;
+  min-height: 60px;
+}
+
 .shop-btn {
-  display: inline-block;
-  padding: 12px 28px;
+  padding: 14px 28px;
   font-weight: bold;
-  color: white;
-  background: linear-gradient(135deg, #b30000, #ff2a2a);
-  border-radius: 6px;
+  border-radius: 8px;
   border: none;
   cursor: pointer;
-  transition: all 0.25s ease;
-  box-shadow: 0 4px 12px rgba(255,42,42,0.4);
-}
-.shop-btn:hover {
-  background: linear-gradient(135deg, #ff2a2a, #b30000);
-  transform: scale(1.08);
-  box-shadow: 0 6px 16px rgba(255,42,42,0.6);
-}
-.shop-btn:active {
-  background: #b30000;
-  transform: scale(0.98);
-  box-shadow: 0 3px 8px rgba(255,42,42,0.4);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(255,42,42,0.4);
+  transition: all 0.3s ease;
 }
 
-/* Section Dividers */
+.shop-btn.active {
+  background: linear-gradient(135deg, #b30000, #ff2a2a);
+}
+
+.shop-btn.active:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 22px rgba(255,42,42,0.6);
+  background: linear-gradient(135deg, #ff2a2a, #b30000);
+}
+
+.shop-btn.coming-soon {
+  background: #555;
+  cursor: not-allowed;
+  color: #ccc;
+  box-shadow: none;
+}
+
+/* Section Divider */
 .section-divider {
   width: 80%;
-  height: 3px;
+  height: 4px;
   margin: 60px auto;
   background: linear-gradient(90deg, transparent, #ff2a2a, transparent);
   border-radius: 2px;
 }
 
-/* Footer */
+/* ================= FOOTER ================= */
 footer {
-  background-color: #0b0b0b;
-  padding: 30px 20px;
+  text-align: center;
+  padding: 40px 20px;
+  background: #0b0b0b;
   border-top: 3px solid #b30000;
   font-size: 14px;
   color: #ccc;
-  text-align: center;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeIn {
+  from {opacity:0; transform: translateY(20px);}
+  to {opacity:1; transform: translateY(0);}
 }
 
 /* Responsive */
-@media screen and (max-width: 768px){
-  header { flex-direction: column; gap: 30px; padding: 60px 20px; }
-  header .hero-text { text-align: center; }
+@media screen and (max-width: 768px) {
+  .hero { flex-direction: column; padding: 80px 20px 60px; }
+  .hero h1 { font-size: 36px; }
 }
+
 @media screen and (max-width: 480px) {
-  .top-nav { flex-wrap: wrap; padding: 10px 0; }
-  .top-nav a { font-size: 12px; padding: 6px 10px; }
-  header h1 { font-size: 32px; }
-  .shop-card img { width: 150px; }
+  .shop-card img { width: 140px; height: 140px; }
   .shop-intro { padding: 30px 15px; }
 }
 </style>
@@ -244,58 +267,41 @@ footer {
 </nav>
 
 <!-- HERO -->
-<header>
+<section class="hero">
   <img src="badge.png" alt="Motion Mastery Badge" class="badge">
-  <div class="hero-text">
+  <div>
     <h1>Motion Mastery Academy Shop</h1>
-    <p>Elite soccer gear and training equipment designed to help players move faster, train smarter, and improve performance on the field.</p>
+    <p>Premium training tools and gear designed to maximize performance, refine skills, and give every athlete the edge on the field.</p>
   </div>
-</header>
+</section>
 
 <!-- SHOP INTRO -->
 <div class="shop-intro">
-  <h2>Gear Up for Peak Performance ⚡</h2>
-  <p>Every item in our shop is hand-selected to elevate your training. From professional agility ladders to premium soccer balls, equip yourself like the pros and take your game to the next level.</p>
+  <h2>Elevate Your Training ⚡</h2>
+  <p>Each item in our shop is handpicked to deliver professional-grade quality — the same equipment trusted by Motion Mastery athletes for elite performance.</p>
+  <p class="shop-disclaimer">Disclaimer: Products are sourced from trusted suppliers and used by Motion Mastery Academy athletes.</p>
 </div>
 
-<!-- MAIN SHOP GRID -->
-<main class="shop-section">
-  <div class="shop-grid">
-    <!-- AGILITY LADDER -->
-    <div class="shop-card">
-      <img src="agility-ladder.png" alt="Agility Ladder">
-      <h3>Pro Agility Ladder</h3>
-      <p>Increase foot speed, coordination, and explosive movement with our professional ladder. Perfect for drills and training sessions.</p>
-      <a href="https://www.paypal.com/ncp/payment/6X83BDFGZENYE" target="_blank" class="shop-btn">Buy Now</a>
-    </div>
-
-    <!-- SOCCER BALL -->
-    <div class="shop-card">
-      <img src="soccer-ball.png" alt="Soccer Ball">
-      <h3>Elite Training Ball</h3>
-      <p>High-quality, durable ball for training, touch work, and match play. Ideal for all ages and skill levels.</p>
-      <a href="https://www.paypal.com/ncp/payment/6X83BDFGZENYE" target="_blank" class="shop-btn">Buy Now</a>
-    </div>
-
-    <!-- WATER BOTTLE -->
-    <div class="shop-card">
-      <img src="water-bottle.png" alt="Water Bottle">
-      <h3>Performance Water Bottle</h3>
-      <p>Stay hydrated during intense sessions. BPA-free, leak-proof, and branded with Motion Mastery colors.</p>
-      <a href="https://www.paypal.com/ncp/payment/6X83BDFGZENYE" target="_blank" class="shop-btn">Buy Now</a>
-    </div>
-
-    <!-- TRAINING CONES -->
-    <div class="shop-card">
-      <img src="training-cones.png" alt="Training Cones">
-      <h3>Training Cones Set</h3>
-      <p>Perfect for agility drills, skill circuits, and positioning exercises. Brightly colored and durable.</p>
-      <a href="https://www.paypal.com/ncp/payment/6X83BDFGZENYE" target="_blank" class="shop-btn">Buy Now</a>
-    </div>
+<!-- SHOP GRID -->
+<main class="shop-grid">
+  <!-- AGILITY LADDER -->
+  <div class="shop-card">
+    <img src="agility-ladder.png" alt="Agility Ladder">
+    <h3>Pro Agility Ladder</h3>
+    <p>Boost foot speed, coordination, and explosive movement — perfect for elite training sessions.</p>
+    <a href="https://www.paypal.com/ncp/payment/6X83BDFGZENYE" target="_blank" class="shop-btn active">Buy Now</a>
   </div>
 
-  <div class="section-divider"></div>
+  <!-- JERSEY -->
+  <div class="shop-card">
+    <img src="jersey.png" alt="Training Jersey">
+    <h3>Training Jersey</h3>
+    <p>High-quality, breathable jersey designed for comfort and performance during every session.</p>
+    <button class="shop-btn coming-soon">Coming Soon</button>
+  </div>
 </main>
+
+<div class="section-divider"></div>
 
 <!-- FOOTER -->
 <footer>

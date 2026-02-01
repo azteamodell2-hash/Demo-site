@@ -23,7 +23,7 @@ body {
   overflow-x: hidden;
 }
 
-/* =================== TOP NAV (MATCHES HOMEPAGE) =================== */
+/* ================= TOP NAV ================= */
 .top-nav {
   position: sticky;
   top: 0;
@@ -67,20 +67,6 @@ body {
   width: 100%;
 }
 
-/* Mobile Nav */
-@media screen and (max-width: 480px) {
-  .top-nav {
-    flex-wrap: wrap;
-    padding: 8px 0;
-  }
-
-  .top-nav a {
-    font-size: 12px;
-    padding: 6px 10px;
-    margin: 2px;
-  }
-}
-
 /* ================= HERO ================= */
 .hero {
   position: relative;
@@ -112,6 +98,7 @@ body {
   border-radius: 10px;
   border: 3px solid #b30000;
   box-shadow: 0 6px 22px rgba(255,42,42,0.4);
+  transform: rotate(0deg);
 }
 
 /* ================= SHOP INTRO ================= */
@@ -129,17 +116,19 @@ body {
 .shop-intro h2 {
   font-size: 34px;
   color: #ff2a2a;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   text-transform: uppercase;
 }
 
 .shop-intro p {
   font-size: 17px;
   color: #ddd;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
+  line-height: 1.7;
 }
 
-.shop-disclaimer {
+/* Smaller secondary line (same formatting as earlier versions) */
+.shop-intro .shop-disclaimer {
   font-size: 14px;
   color: #aaa;
   font-style: italic;
@@ -211,11 +200,10 @@ body {
   text-decoration: none;
 }
 
-/* Nicer hover — darker, not black */
+/* Darker hover, not black */
 .shop-btn.active:hover {
   background: linear-gradient(135deg, #7a0000, #c40000);
   box-shadow: 0 8px 22px rgba(255,42,42,0.55);
-  text-decoration: none;
 }
 
 /* Coming Soon */
@@ -266,7 +254,9 @@ footer {
 
 <div class="shop-intro">
   <h2>Elevate Your Training</h2>
-  <p>Every product reflects the same performance standard demanded inside Motion Mastery Academy sessions.</p>
+  <p>
+    Every product offered here meets the same standard we demand in our own sessions — durable, purpose-driven, and engineered to support high-performance training environments.
+  </p>
   <p class="shop-disclaimer">
     Products are sourced from trusted suppliers and actively used by Motion Mastery Academy athletes.
   </p>
@@ -274,7 +264,6 @@ footer {
 
 <main class="shop-grid">
 
-  <!-- AGILITY LADDER -->
   <div class="shop-card">
     <img src="agility-ladder.png" alt="Agility Ladder">
     <h3>Pro Agility Ladder</h3>
@@ -284,7 +273,6 @@ footer {
     </a>
   </div>
 
-  <!-- JERSEY -->
   <div class="shop-card">
     <img src="jersey.png" alt="Training Jersey">
     <h3>Training Jersey</h3>
@@ -300,5 +288,3 @@ footer {
 
 </body>
 </html>
-
-

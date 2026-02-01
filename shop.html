@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Motion Mastery Academy Shop</title>
+<link rel="icon" href="badge.png" type="image/png">
+
+<style>
+/* ================= GLOBAL ================= */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(180deg, #0b0b0b 0%, #1a0000 100%);
+  color: #f2f2f2;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; }
+
+/* ================= TOP NAV ================= */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(179,0,0,0.6);
+  font-weight: bold;
+}
+.top-nav a {
+  color: #d0d0d0;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  position: relative;
+  padding: 6px 2px;
+  transition: color 0.25s ease;
+}
+.top-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #ff2a2a;
+  transition: width 0.25s ease;
+}
+.top-nav a:hover {
+  color: #ffffff;
+}
+.top-nav a:hover::after {
+  width: 100%;
+}
+
+/* ================= HERO ================= */
+header {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;
+  background: radial-gradient(circle at center, rgba(179,0,0,0.1), transparent 80%), 
+              linear-gradient(180deg, rgba(0,0,0,0.85), rgba(0,0,0,0.95));
+  padding: 80px 60px;
+  overflow: hidden;
+}
+
+header .hero-text {
+  max-width: 600px;
+}
+header h1 {
+  font-size: 40px;
+  letter-spacing: 2px;
+  color: #ff2a2a;
+  text-shadow: 0 0 10px rgba(255,42,42,0.6);
+  margin: 0 0 20px 0;
+}
+header p {
+  font-size: 18px;
+  color: #f2f2f2;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Badge positioning */
+header .badge {
+  width: 180px;
+  max-width: 180px;
+  border: 3px solid #b30000;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(255,42,42,0.4);
+}
+
+/* ================= SHOP INTRO ================= */
+.shop-intro {
+  max-width: 1000px;
+  margin: 60px auto 40px;
+  padding: 40px;
+  border: 2px solid #b30000;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+  box-shadow: 0 6px 15px rgba(179,0,0,0.3);
+  text-align: center;
+}
+.shop-intro h2 {
+  color: #ff2a2a;
+  font-size: 28px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(255,42,42,0.6);
+}
+.shop-intro p {
+  font-size: 16px;
+  color: #ddd;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+/* ================= SHOP GRID ================= */
+.shop-section {
+  margin: 0 auto 80px;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+.shop-card {
+  background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+  border: 2px solid #b30000;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(179,0,0,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.shop-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(255,42,42,0.6);
+}
+.shop-card img {
+  width: 180px;
+  max-width: 90%;
+  margin-bottom: 15px;
+  transition: transform 0.3s;
+}
+.shop-card:hover img {
+  transform: translateY(-6px) rotate(-2deg) scale(1.05);
+}
+.shop-card h3 {
+  color: #ff2a2a;
+  font-size: 18px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(255,42,42,0.6);
+}
+.shop-card p {
+  font-size: 14px;
+  min-height: 50px;
+  margin-bottom: 20px;
+  color: #ddd;
+  line-height: 1.5;
+}
+
+/* Buy button linking to PayPal */
+.shop-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(135deg, #b30000, #ff2a2a);
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(255,42,42,0.4);
+}
+.shop-btn:hover {
+  background: linear-gradient(135deg, #ff2a2a, #b30000);
+  transform: scale(1.08);
+  box-shadow: 0 6px 16px rgba(255,42,42,0.6);
+}
+.shop-btn:active {
+  background: #b30000;
+  transform: scale(0.98);
+  box-shadow: 0 3px 8px rgba(255,42,42,0.4);
+}
+
+/* Section Dividers */
+.section-divider {
+  width: 80%;
+  height: 3px;
+  margin: 60px auto;
+  background: linear-gradient(90deg, transparent, #ff2a2a, transparent);
+  border-radius: 2px;
+}
+
+/* Footer */
+footer {
+  background-color: #0b0b0b;
+  padding: 30px 20px;
+  border-top: 3px solid #b30000;
+  font-size: 14px;
+  color: #ccc;
+  text-align: center;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px){
+  header { flex-direction: column; gap: 30px; padding: 60px 20px; }
+  header .hero-text { text-align: center; }
+}
+@media screen and (max-width: 480px) {
+  .top-nav { flex-wrap: wrap; padding: 10px 0; }
+  .top-nav a { font-size: 12px; padding: 6px 10px; }
+  header h1 { font-size: 32px; }
+  .shop-card img { width: 150px; }
+  .shop-intro { padding: 30px 15px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="top-nav">
+  <a href="index.html">Home</a>
+  <a href="training.html">Training</a>
+  <a href="testimonials.html">Testimonials</a>
+  <a href="shop.html">Shop</a>
+</nav>
+
+<!-- HERO -->
+<header>
+  <img src="badge.png" alt="Motion Mastery Badge" class="badge">
+  <div class="hero-text">
+    <h1>Motion Mastery Academy Shop</h1>
+    <p>Elite soccer gear and training equipment designed to help players move faster, train smarter, and improve performance on the field.</p>
+  </div>
+</header>
+
+<!-- SHOP INTRO -->
+<div class="shop-intro">
+  <h2>Gear Up for Peak Performance ⚡</h2>
+  <p>Every item in our shop is hand-selected to elevate your training. From professional agility ladders to premium soccer balls, equip yourself like the pros and take your game to the next level.</p>
+</div>
+
+<!-- MAIN SHOP GRID -->
+<main class="shop-section">
+  <div class="shop-grid">
+    <!-- AGILITY LADDER -->
+    <div class="shop-card">
+      <img src="agility-ladder.png" alt="Agility Ladder">
+      <h3>Pro Agility Ladder</h3>
+      <p>Increase foot speed, coordination, and explosive movement with our professional ladder. Perfect for drills and training sessions.</p>
+      <a href="https://www.paypal.com/ncp/payment/6X83BDFGZENYE" target="_blank" class="shop-btn">Buy Now</a>
+    </div>
+
+    <!-- SOCCER BALL -->
+    <div class="shop-card">
+      <img src="soccer-ball.png" alt="Soccer Ball">
+      <h3>Elite Training Ball</h3>
+      <p>High-quality, durable ball for training, touch work, and match play. Ideal for all ages and skill levels.</p>
+      <a href="https://www.paypal.com/ncp/payment/6X83BDFGZENYE" target="_blank" class="shop-btn">Buy Now</a>
+    </div>
+
+    <!-- WATER BOTTLE -->
+    <div class="shop-card">
+      <img src="water-bottle.png" alt="Water Bottle">
+      <h3>Performance Water Bottle</h3>
+      <p>Stay hydrated during intense sessions. BPA-free, leak-proof, and branded with Motion Mastery colors.</p>
+      <a href="https://www.paypal.com/ncp/payment/6X83BDFGZENYE" target="_blank" class="shop-btn">Buy Now</a>
+    </div>
+
+    <!-- TRAINING CONES -->
+    <div class="shop-card">
+      <img src="training-cones.png" alt="Training Cones">
+      <h3>Training Cones Set</h3>
+      <p>Perfect for agility drills, skill circuits, and positioning exercises. Brightly colored and durable.</p>
+      <a href="https://www.paypal.com/ncp/payment/6X83BDFGZENYE" target="_blank" class="shop-btn">Buy Now</a>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  &copy; 2025 Motion Mastery Soccer Academy
+</footer>
+
+</body>
+</html>

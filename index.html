@@ -193,9 +193,52 @@ p { max-width: 700px; margin: 0 auto 25px; font-size: 16px; line-height: 1.6; }
 /* BUTTON */
 .btn { display: inline-block; padding: 16px 34px; background-color: #b30000; color: white; text-decoration: none; font-weight: bold; border-radius: 6px; border: 2px solid black; transition: all 0.25s ease; margin: 10px; }
 .btn:hover { background-color: black; color: #ff2a2a; border-color: #b30000; transform: scale(1.05); }
-/* PHILOSOPHY */
-.philosophy { margin-top: 70px; padding-top: 40px; border-top: 2px solid #b30000; }
-.signature { margin-top: 35px; font-size: 15px; opacity: 0.9; }
+
+/* ===== PHILOSOPHY SECTION ===== */
+.philosophy {
+  margin-top: 70px;
+  padding-top: 40px;
+  border-top: 2px solid #b30000;
+  position: relative;
+  overflow: hidden;
+}
+
+.philosophy::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,42,42,0.1) 0%, transparent 70%);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+.philosophy-content {
+  display: none;
+  max-width: 720px;
+  margin: 30px auto 0;
+  text-align: center;
+}
+
+
+.philosophy-content p {
+  color: #f2f2f2;
+  line-height: 1.75;
+  font-size: 16.5px;
+}
+
+.signature {
+  margin-top: 26px;
+  font-size: 15px;
+  opacity: 0.9;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+
+
 /* PRICING */
 .pricing-section { margin-top: 70px; border-top: 2px solid #b30000; padding-top: 40px; }
 .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1000px; margin: 0 auto; }
@@ -237,7 +280,122 @@ footer { background-color: black; padding: 20px; margin-top: 60px; border-top: 3
 .app-text span { display: block; font-size: 12px; opacity: 0.8; }
 .app-install-btn { background: #b30000; color: white; border: none; padding: 10px 18px; border-radius: 6px; font-weight: bold; cursor: pointer; }
 .app-install-btn:hover { background: black; color: #ff2a2a; }
+
+/* ===== Training Comparison Visual Section ===== */
+.training-compare {
+  max-width: 1050px;
+  margin: 80px auto 90px;
+  padding: 50px 30px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #0e0e0e, #141414);
+  border: 1px solid rgba(255, 42, 42, 0.35);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.5);
+}
+
+.training-compare h2 {
+  color: #ff2a2a;
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+.training-compare p {
+  max-width: 760px;
+  margin: 0 auto 40px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+/* ===== Training Comparison Cards: Shrunk & Uniform ===== */
+.compare-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* center content horizontally */
+  overflow: hidden;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #181818, #0f0f0f);
+  padding: 12px;             /* smaller padding to shrink card */
+  border: 2px solid transparent; /* border color set by .good/.bad */
+  max-width: 300px;          /* limit card width for uniform look */
+  margin: 0 auto;            /* center in grid */
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.compare-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.6);
+}
+
+.compare-card.bad {
+  border-color: rgba(255, 42, 42, 0.7);
+}
+
+.compare-card.good {
+  border-color: rgba(0, 200, 90, 0.7);
+}
+
+/* Image inside card */
+.compare-img {
+  width: 100%;          /* fill card width */
+  height: auto;         /* maintain aspect ratio */
+  object-fit: contain;  /* no cropping, full image visible */
+  border-radius: 8px;   /* rounded corners match card */
+  display: block;
+  margin-bottom: 12px;  /* space between image and content */
+}
+
+/* Content below image */
+.compare-content {
+  text-align: center;   /* keep badges and text centered */
+  padding: 8px 12px;
+}
+
+.compare-badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: 50px;
+  margin-bottom: 8px;
+}
+
+.badge-red {
+  background: rgba(255,42,42,0.15);
+  color: #ff2a2a;
+  border: 1px solid rgba(255,42,42,0.6);
+}
+
+.badge-green {
+  background: rgba(0,200,90,0.15);
+  color: #00ff88;
+  border: 1px solid rgba(0,200,90,0.6);
+}
+
+.compare-content h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.compare-content p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #e6e6e6;
+}
+
+
+
 </style>
+
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY">
+</script>
+
 </head>
 <script>
 function togglePhilosophy() {
@@ -245,7 +403,7 @@ const content = document.querySelector(".philosophy-content");
 const btn = document.querySelector(".philosophy-toggle");
 if (content.style.display === "block") {
 content.style.display = "none";
-btn.textContent = "Read Our Philosophy";
+btn.textContent = "Read How We Train";
 } else {
 content.style.display = "block";
 btn.textContent = "Hide Philosophy";
@@ -271,22 +429,37 @@ btn.textContent = "Hide Philosophy";
 <main>
 <h2>Elite Soccer Training</h2>
 <p> Personalized training designed to accelerate results, sharpen technique, and translate skills directly into game performance. </p>
-<!-- PHILOSOPHY -->
-<div class="philosophy reveal delay-1" id="philosophy">
 
-<h2>Our Philosophy</h2>
-<button class="philosophy-toggle" onclick="togglePhilosophy()"> Read Our Philosophy </button>
-<div class="philosophy-content">
-<p> Across every level of the game, from grassroots soccer to the highest youth standards, the same development pattern appears again and again: improvement through sheer volume. More reps. More sessions. More hours. This approach is widely accepted, and while it can work, it often requires far more time than necessary to produce meaningful progress. </p>
-<p>I followed that path myself.</p>
-<p> Over the course of my playing career, I accumulated well over 2,000 hours of shooting practice. For much of that time, improvement came slowly and inconsistently—not because of a lack of effort, but because repetition came before understanding. It wasn’t until the final phase of my development that I began to truly study technique, body mechanics, and movement efficiency. In that relatively short period, my consistency and execution improved exponentially. </p>
-<p> That experience reshaped how I view training. </p>
-<p> Certain aspects of the game, particularly ball mastery and comfort in possession, naturally demand time and repetition. While training methods can be optimized, there are no real shortcuts to developing feel, creativity, and confidence on the ball. Those qualities are earned through consistent exposure and experience. </p>
-<p> Kicking mechanics, however, are different. Shooting and weak-foot development are highly technical movements where efficiency matters. Without proper structure, repetition alone becomes inefficient, and small mechanical flaws compound over thousands of reps. When players first understand how their body moves, how force is generated, and how technique influences outcome, repetition finally becomes productive instead of wasteful. </p>
-<p> At Motion Mastery, the focus is on doing the work up front. Proper mechanics are built consciously before they are repeated endlessly. From there, training shifts toward turning correct movement into muscle memory and embedding it into the subconscious. When players train with awareness first and volume second, progress accelerates. Time is saved. Confidence grows. And every rep has intent. </p>
-<p class="signature"> This is the foundation of Motion Mastery Academy.<br><br> — Jude Odell, Founder </p>
+<!-- PHILOSOPHY -->
+
+<div class="philosophy reveal delay-1" id="philosophy">
+  <h2>Why We’re Different</h2>
+  <button class="philosophy-toggle" onclick="togglePhilosophy()">Read How We Train</button>
+
+  <div class="philosophy-content">
+    <p>
+      Most programs focus on volume before technique: more reps, more sessions, more hours.
+      At Motion Mastery, we flip the script. Mechanics come first. Players learn how their body moves,
+      how to generate force efficiently, and how technique drives results.
+    </p>
+
+    <p>
+      Once movements are mastered, we layer in purposeful repetitions. Every rep is intentional,
+      precise, and designed to build muscle memory quickly. Skills are then applied in game-like
+      scenarios so development translates directly to performance.
+    </p>
+
+    <p>
+      This method accelerates progress, saves time, and builds confidence. Weak-foot development,
+      shooting mechanics, and ball mastery are taught with precision. At Motion Mastery, training isn’t
+      just hard — it's smart, structured, and results-driven.
+    </p>
+
+    <p class="signature">— Jude Odell, Founder</p>
+  </div>
 </div>
-</div>
+
+
 <!-- HOMESCHOOL -->
 <div class="philosophy" id="homeschool">
 <h2>Homeschool-Friendly Training</h2>
@@ -295,6 +468,30 @@ btn.textContent = "Hide Philosophy";
 </div>
 <div class="section-divider"></div>
 
+<!-- ===== SERVICE AREA & TRAINING LOCATIONS ===== -->
+<div class="training-section-pro reveal delay-2">
+
+  <h2>Serving East Valley Families</h2>
+  <p>
+    Motion Mastery proudly provides elite private and small-group soccer training
+    throughout the East Valley. Sessions are hosted at high-quality public facilities
+    selected for safety, space, and training quality.
+  </p>
+
+  <button class="home-btn" onclick="toggleLocations()">View Training Locations</button>
+
+  <div id="locationMapWrap" style="display:none; margin-top:30px;">
+
+    <p style="font-size:14px; opacity:0.85; margin-bottom:15px;">
+      Training locations vary by session size and availability. Exact field details are
+      provided after booking.
+    </p>
+
+    <div id="trainingMap" style="width:100%; height:380px; border-radius:14px; border:2px solid rgba(255,42,42,0.4); box-shadow:0 8px 20px rgba(0,0,0,0.45);"></div>
+
+  </div>
+
+</div>
 
 <div class="training-section-pro reveal delay-2">
 
@@ -304,6 +501,50 @@ btn.textContent = "Hide Philosophy";
   </p>
   <a href="training.html" class="home-btn">View Training Programs</a>
 </div>
+
+<!-- ===== TRAINING COMPARISON VISUAL SECTION ===== -->
+<div class="training-compare reveal delay-3">
+
+  <h2>Why Our Training Actually Works</h2>
+  <p>
+    Most training looks technical — but doesn’t translate to real games.
+    We build movement patterns that directly transfer into match performance.
+  </p>
+
+  <div class="compare-grid">
+
+    <!-- BAD METHOD -->
+    <div class="compare-card bad">
+      <img src="bad-drill.jpg" class="compare-img" alt="Stationary soccer training drill">
+
+      <div class="compare-content">
+        <span class="compare-badge badge-red">✕ Common Academy Training</span>
+        <h3>Stationary, Isolated Movements</h3>
+        <p>
+          Standing drills and forced balance positions fail to replicate real match demands.
+          These methods build habits that rarely translate under pressure.
+        </p>
+      </div>
+    </div>
+
+    <!-- GOOD METHOD -->
+    <div class="compare-card good">
+      <img src="good-dribble.jpg" class="compare-img" alt="Dynamic game realistic soccer training">
+
+      <div class="compare-content">
+        <span class="compare-badge badge-green">✓ Motion Mastery Training</span>
+        <h3>Dynamic, Game-Driven Movement</h3>
+        <p>
+          Every rep is explosive, directional, and game-realistic — building balance, speed,
+          control, and coordination that directly carry into match situations.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<!-- ===== END COMPARISON ===== -->
 
 
 <section class="reveal delay-1">
@@ -410,7 +651,78 @@ showTestimonial();
 // Rotate every 6 seconds
 setInterval(showTestimonial, 6000);
 
+/* ===== LOCATION MAP TOGGLE ===== */
+let mapLoaded = false;
 
+function toggleLocations() {
+  const wrap = document.getElementById("locationMapWrap");
+
+  if (wrap.style.display === "none") {
+    wrap.style.display = "block";
+
+    if (!mapLoaded) {
+      initTrainingMap();
+      mapLoaded = true;
+    }
+  } else {
+    wrap.style.display = "none";
+  }
+}
+/* ===== GOOGLE MAP INIT ===== */
+function initTrainingMap() {
+
+  const center = { lat: 33.2765, lng: -111.7045 }; // East Valley center
+
+  const map = new google.maps.Map(document.getElementById("trainingMap"), {
+    zoom: 11,
+    center: center,
+    styles: [
+      { elementType: "geometry", stylers: [{ color: "#0b0b0b" }] },
+      { elementType: "labels.text.stroke", stylers: [{ color: "#0b0b0b" }] },
+      { elementType: "labels.text.fill", stylers: [{ color: "#ff2a2a" }] },
+      { featureType: "water", elementType: "geometry", stylers: [{ color: "#111" }] },
+      { featureType: "road", elementType: "geometry", stylers: [{ color: "#222" }] },
+      { featureType: "poi", elementType: "geometry", stylers: [{ color: "#141414" }] }
+    ],
+    disableDefaultUI: true,
+    zoomControl: true,
+    gestureHandling: "cooperative"
+  });
+
+  const locations = [
+    {
+      position: { lat: 33.2408, lng: -111.6316 },
+      title: "Johnson Ranch Fields",
+      content: "<strong>Johnson Ranch Area Fields</strong><br>Small Group & Private Training (1–6 players)"
+    },
+    {
+      position: { lat: 33.4175, lng: -111.6594 },
+      title: "Desert Sky Park",
+      content: "<strong>Desert Sky Park</strong><br>Camps, Clinics & Group Training"
+    },
+    {
+      position: { lat: 33.3192, lng: -111.7427 },
+      title: "Gilbert Regional Park",
+      content: "<strong>Gilbert Regional Park</strong><br>Futsal & Specialty Sessions"
+    }
+  ];
+
+  const infoWindow = new google.maps.InfoWindow();
+
+  locations.forEach(loc => {
+    const marker = new google.maps.Marker({
+      position: loc.position,
+      map: map,
+      title: loc.title,
+      animation: google.maps.Animation.DROP
+    });
+
+    marker.addListener("click", () => {
+      infoWindow.setContent(loc.content);
+      infoWindow.open(map, marker);
+    });
+  });
+}
 
 </script>
 </body>

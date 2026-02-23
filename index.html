@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#b30000">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -392,10 +401,6 @@ footer { background-color: black; padding: 20px; margin-top: 60px; border-top: 3
 
 </style>
 
-<script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY">
-</script>
-
 </head>
 <script>
 function togglePhilosophy() {
@@ -668,62 +673,63 @@ function toggleLocations() {
     wrap.style.display = "none";
   }
 }
-/* ===== GOOGLE MAP INIT ===== */
+
+/* ===== LEAFLET MAP INIT ===== */
 function initTrainingMap() {
 
-  const center = { lat: 33.2765, lng: -111.7045 }; // East Valley center
+  const map = L.map('trainingMap').setView([33.2765, -111.7045], 11);
 
-  const map = new google.maps.Map(document.getElementById("trainingMap"), {
-    zoom: 11,
-    center: center,
-    styles: [
-      { elementType: "geometry", stylers: [{ color: "#0b0b0b" }] },
-      { elementType: "labels.text.stroke", stylers: [{ color: "#0b0b0b" }] },
-      { elementType: "labels.text.fill", stylers: [{ color: "#ff2a2a" }] },
-      { featureType: "water", elementType: "geometry", stylers: [{ color: "#111" }] },
-      { featureType: "road", elementType: "geometry", stylers: [{ color: "#222" }] },
-      { featureType: "poi", elementType: "geometry", stylers: [{ color: "#141414" }] }
-    ],
-    disableDefaultUI: true,
-    zoomControl: true,
-    gestureHandling: "cooperative"
-  });
+   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(map);
 
-  const locations = [
-    {
-      position: { lat: 33.2408, lng: -111.6316 },
-      title: "Johnson Ranch Fields",
-      content: "<strong>Johnson Ranch Area Fields</strong><br>Small Group & Private Training (1–6 players)"
-    },
-    {
-      position: { lat: 33.4175, lng: -111.6594 },
-      title: "Desert Sky Park",
-      content: "<strong>Desert Sky Park</strong><br>Camps, Clinics & Group Training"
-    },
-    {
-      position: { lat: 33.3192, lng: -111.7427 },
-      title: "Gilbert Regional Park",
-      content: "<strong>Gilbert Regional Park</strong><br>Futsal & Specialty Sessions"
-    }
-  ];
+  // City + road labels overlay (for clarity)
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png', {
+    subdomains: 'abcd',
+    maxZoom: 19,
+    pane: 'overlayPane'
+  }).addTo(map);
 
-  const infoWindow = new google.maps.InfoWindow();
+const locations = [
+  {
+    name: "Desert Sky Park",
+    coords: [33.29859, -111.69099],
+    text: "Camps, Clinics & Group Training",
+    googleLink: "https://www.google.com/maps/search/6624+S+Power+Rd,+Mesa,+AZ+85212"
+  },
+  {
+    name: "Power Ranch Soccer Fields",
+    coords: [33.2700, -111.6953],
+    text: "Private 1-on-1 to 1-on-6 Training",
+    googleLink: "https://www.google.com/maps/search/78C4+G2,+Gilbert,+Arizona"
+  },
+  {
+    name: "Gilbert Regional Park",
+    coords: [33.261094, -111.721744],
+    text: "Futsal & Specialty Sessions",
+    googleLink: "https://www.google.com/maps/search/774G+WGR,+Gilbert,+AZ+85298"
+  }
+];
 
-  locations.forEach(loc => {
-    const marker = new google.maps.Marker({
-      position: loc.position,
-      map: map,
-      title: loc.title,
-      animation: google.maps.Animation.DROP
-    });
+locations.forEach(loc => {
+  const googleLink = `https://www.google.com/maps/search/?api=1&query=${loc.coords[0]},${loc.coords[1]}`;
 
-    marker.addListener("click", () => {
-      infoWindow.setContent(loc.content);
-      infoWindow.open(map, marker);
-    });
-  });
-}
+  L.marker(loc.coords)
+    .addTo(map)
+    .bindPopup(`
+      <strong>${loc.name}</strong><br>
+      ${loc.text}<br><br>
+      <a href="${googleLink}" target="_blank"
+         style="display:inline-block;padding:8px 12px;border-radius:6px;
+         background:#b30000;color:white;text-decoration:none;
+         font-weight:bold;border:1px solid black;">
+         Open in Google Maps →
+      </a>
+    `);
+});
 
-</script>
+
+}</script>
 </body>
 </html>

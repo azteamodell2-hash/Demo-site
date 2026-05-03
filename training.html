@@ -8,8 +8,6 @@
   <meta name="theme-color" content="#b30000">
   <meta name="apple-mobile-web-app-capable" content="yes">
 
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CNCRSBPV0Z"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -19,9 +17,9 @@
   </script>
 
   <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <style>
     /* =================== GLOBAL STYLES =================== */
@@ -30,13 +28,12 @@
     }
 
     body {
-      margin: 0;
-      /* Updated to a high-end font */
-      font-family: 'Montserrat', sans-serif; 
-      background: linear-gradient(180deg, #0a0a0a 0%, #1a0000 100%);
-      color: #e0e0e0;
-      text-align: center;
-    }
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #0b0b0b 0%, #1f0000 100%);
+  color: #f2f2f2;
+  text-align: center;
+}
 
     a {
       text-decoration: none;
@@ -44,274 +41,239 @@
 
     h1, h2, h3 {
       margin: 0 0 15px 0;
-      letter-spacing: 0.5px;
     }
 
-    /* =================== TOP NAV (Streamlined) =================== */
-    .top-nav {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(10, 10, 10, 0.9);
-      backdrop-filter: blur(8px);
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 15px 0;
-      border-bottom: 1px solid rgba(179, 0, 0, 0.4);
+    section, div[id] {
+      scroll-margin-top: 90px;
     }
 
-    .top-nav a {
-      color: #c0c0c0;
-      font-size: 13px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      position: relative;
-      padding: 8px 4px;
-      transition: color 0.3s ease;
-    }
+/* =================== TOP NAV =================== */
+.top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(179, 0, 0, 0.6);
+}
 
-    .top-nav a:hover {
-      color: #ffffff;
-    }
+.top-nav a {
+  color: #d0d0d0;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  padding: 6px 2px;
+  transition: color 0.25s ease;
+}
 
-    @media screen and (max-width: 480px) {
-      .top-nav { flex-wrap: wrap; padding: 10px 0; }
-      .top-nav a { font-size: 11px; padding: 6px; }
-    }
+.top-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: #b30000;
+  transition: width 0.25s ease;
+}
 
-    /* =================== HEADER (Refined) =================== */
-    .header-opt {
-      background: #0a0a0a;
-      padding: 60px 20px 40px;
-      text-align: center;
-      max-width: 800px;
-      margin: 30px auto;
-      border-radius: 12px;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.5);
-      border: 1px solid rgba(179,0,0,0.2);
-    }
+.top-nav a:hover {
+  color: #ffffff;
+}
 
-    .badge-opt {
-      width: 180px;
-      height: auto;
-      margin-bottom: 25px;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(179,0,0,0.4);
-    }
+.top-nav a:hover::after {
+  width: 100%;
+}
 
-    .header-opt h1 {
-      font-size: 40px;
-      color: #ff3333;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
-      margin-bottom: 20px;
-    }
+@media screen and (max-width: 480px) {
+  .top-nav {
+    flex-wrap: wrap;
+    padding: 8px 0;
+  }
+  .top-nav a {
+    font-size: 12px;
+    padding: 6px 10px;
+    margin: 2px;
+  }
+}
 
-    /* =================== MAIN BUTTONS =================== */
-    .btn-primary-opt {
-      display: inline-block;
-      padding: 18px 45px;
-      font-size: 16px;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 1.2px;
-      color: #fff;
-      background: linear-gradient(145deg, #b30000, #800000);
-      border: 1px solid #600000;
-      border-radius: 8px;
-      box-shadow: 0 4px 15px rgba(179,0,0,0.4);
-      transition: all 0.3s ease;
-    }
+/* =================== HEADER =================== */
+.header-opt {
+  background: #0b0b0b;
+  padding: 70px 20px 50px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(179,0,0,0.6);
+}
 
-    .btn-primary-opt:hover {
-      background: #000;
-      color: #ff3333;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(179,0,0,0.6);
-    }
+.badge-opt {
+  width: 220px;
+  max-width: 60%;
+  height: auto;
+  margin-bottom: 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(179,0,0,0.6);
+  transition: transform 0.3s;
+}
 
-    /* =================== MAIN CONTENT =================== */
+.badge-opt:hover {
+  transform: scale(1.05);
+}
+
+.header-opt h1 {
+  font-size: 48px;
+  color: #ff2a2a;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+  letter-spacing: 1.5px;
+  margin-bottom: 25px;
+}
+
+.btn-primary-opt {
+  display: inline-block;
+  padding: 22px 50px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  background: #b30000;
+  border: 2px solid #000;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(179,0,0,0.6);
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.btn-primary-opt:hover {
+  background: #000;
+  color: #ff2a2a;
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(179,0,0,0.8);
+}
+
+/* =================== MAIN CONTENT =================== */
     main {
-      padding: 40px 20px 80px;
-      max-width: 1100px;
+      padding: 60px 20px;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
     h2 {
-      color: #ff3333;
-      font-size: 28px;
-      margin-bottom: 20px;
+      color: #ff2a2a;
+      font-size: 32px;
+      margin-bottom: 25px;
+      text-align: center;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 1px;
     }
 
     p {
-      font-size: 16px;
-      line-height: 1.7;
-      margin-bottom: 25px;
-      max-width: 750px;
+      font-size: 17px;
+      margin-bottom: 30px;
+      max-width: 800px;
       margin-left: auto;
       margin-right: auto;
-      color: #d0d0d0;
     }
 
-    /* =================== PRICING (Streamlined) =================== */
+/* =================== PRICING =================== */
     .pricing-section {
-      margin-top: 60px;
+      margin-top: 80px;
       padding-top: 40px;
-      border-top: 1px solid rgba(179, 0, 0, 0.4);
+      border-top: 2px solid #b30000;
     }
 
     .pricing-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
     }
 
     .price-card {
-      background: linear-gradient(160deg, #161616, #0c0c0c);
-      border: 1px solid rgba(179,0,0,0.3);
-      border-radius: 10px;
-      padding: 25px;
-      transition: all 0.3s ease;
+      background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+      border: 2px solid #b30000;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 8px 20px rgba(179,0,0,0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
     }
 
-    .price-card:hover { 
-      transform: translateY(-3px); 
-      border-color: rgba(179,0,0,0.6);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    .price-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 28px rgba(179,0,0,0.7);
     }
 
-    .price-card h3 { color: #ff3333; font-size: 20px; }
-    .price-card ul { list-style: none; padding: 0; margin-top: 15px; }
-    .price-card li { padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 15px; }
+    .price-card h3 {
+      color: #ff2a2a;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 22px;
+    }
 
-    /* =================== CLINICS (High-End & Compact) =================== */
+    .price-card ul {
+      list-style: none;
+      padding: 0;
+      font-size: 16px;
+    }
+
+    .price-card li {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+/* =================== CLINICS =================== */
     .clinic-section {
-      margin-top: 80px;
-      padding-top: 40px;
-      border-top: 1px solid rgba(179, 0, 0, 0.4);
-    }
-
-    .clinic-container {
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-      align-items: center;
+      margin-top: 100px;
+      padding-top: 30px;
+      border-top: 2px solid #b30000;
     }
 
     .clinic-card {
-      width: 100%;
-      max-width: 420px; /* Thinner profile */
-      padding: 25px; /* Compact padding */
-      border-radius: 12px;
-      position: relative;
-      transition: all 0.3s ease;
-    }
-
-    /* ACTIVE CAMP: Modern & Appealing */
-    .clinic-card.active {
-      background: linear-gradient(160deg, #1a0202, #0d0d0d);
-      border: 1px solid rgba(255, 51, 51, 0.4);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-    }
-
-    .clinic-card.active:hover {
-      box-shadow: 0 6px 25px rgba(179, 0, 0, 0.3);
-      border-color: rgba(255, 51, 51, 0.7);
+      max-width: 450px;
+      margin: 30px auto;
+      padding: 30px;
+      background: linear-gradient(145deg, #1b1b1b, #0e0e0e);
+      border: 2px solid #444; /* Greyed out border */
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      opacity: 0.6; /* Lower opacity for concluded */
+      filter: grayscale(1); /* Fully greyed out */
     }
 
     .clinic-card h3 {
-      font-size: 19px;
-      margin-top: 10px;
-      color: #ffffff;
-    }
-
-    .clinic-card.active h3 { color: #ff3333; }
-
-    .clinic-details {
-      font-size: 14px;
-      color: #b0b0b0;
-      line-height: 1.6;
-      margin: 15px 0;
-    }
-
-    .clinic-price {
-      font-weight: bold;
-      color: #ffffff;
-      margin-bottom: 15px;
-      font-size: 15px;
-    }
-
-    /* Status Label (Clean & Professional) */
-    .status-tag {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      padding: 3px 8px;
-      border-radius: 4px;
-      letter-spacing: 1px;
-    }
-
-    .status-open {
-      background: rgba(179, 0, 0, 0.15);
-      color: #ff4d4d;
-      border: 1px solid #b30000;
-      box-shadow: 0 0 10px rgba(179,0,0,0.2);
-    }
-
-    .status-completed {
-      background: #222;
       color: #888;
-      border: 1px solid #333;
-    }
-
-    /* NEW APPEALING SIGNUP BUTTON */
-    .btn-signup-modern {
-      display: inline-block;
-      margin-top: 5px;
-      padding: 14px 30px;
-      background: #ffffff;
-      color: #b30000;
-      font-weight: 700;
+      margin-bottom: 12px;
+      font-size: 22px;
       text-transform: uppercase;
-      font-size: 14px;
-      letter-spacing: 1.2px;
-      border-radius: 6px;
-      border: 1px solid #ffffff;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
-    .btn-signup-modern:hover {
-      background: #ff3333;
-      color: #ffffff;
-      border-color: #ff3333;
-      transform: scale(1.03);
-      box-shadow: 0 5px 15px rgba(255,51,51,0.4);
+    .clinic-card p {
+      margin-bottom: 15px;
+      font-size: 16px;
+      color: #888;
     }
 
-    /* COMPLETED CAMP: Subtle */
-    .clinic-card.completed {
-      background: rgba(15, 15, 15, 0.6);
-      border: 1px solid #2a2a2a;
-      opacity: 0.6;
-    }
-
-    .clinic-card.completed h3 { color: #aaaaaa; }
-    .clinic-card.completed .clinic-details { color: #888888; }
-
-    /* =================== FOOTER =================== */
+/* =================== FOOTER =================== */
     footer {
       background: #000;
-      padding: 30px;
-      margin-top: 60px;
-      border-top: 1px solid rgba(179, 0, 0, 0.4);
-      font-size: 12px;
-      color: #777;
-      letter-spacing: 1px;
+      padding: 25px;
+      margin-top: 80px;
+      border-top: 3px solid #b30000;
+      text-align: center;
+      font-size: 14px;
+      color: #999;
     }
+
   </style>
 </head>
 <body>
@@ -330,64 +292,47 @@
 </header>
 
   <main>
-    <h2>Advanced Training Programs</h2>
+    <h2>Training Programs</h2>
     <p>
-      Motion Mastery Soccer Academy provides elite-level private instruction and clinics designed to refine technical skills, build tactical intelligence, and boost physical performance.
+      Motion Mastery offers structured private training and clinics designed to elevate your skills, confidence, and in-game performance. Our programs are tailored to push players to their full potential.
     </p>
 
-    <div class="pricing-section">
-      <div class="pricing-grid">
-        <div class="price-card">
-          <h3>One-on-One Mastery</h3>
-          <ul>
-            <li>3-Session: $180 total | $60/session</li>
-            <li>5-Session: $275 total | $55/session</li>
-            <li>8-Session: $420 total | $52.50/session</li>
-            <li>10-Session: $500 total | $50/session</li>
-          </ul>
-        </div>
-        <div class="price-card">
-          <h3>Semi-Private (2 Players)</h3>
-          <ul>
-            <li>3-Session: $270 total | $45/session per player</li>
-            <li>5-Session: $400 total | $40/session per player</li>
-            <li>8-Session: $600 total | $37.50/session per player</li>
-            <li>10-Session: $700 total | $35/session per player</li>
-          </ul>
-        </div>
-      </div>
+<div class="pricing-section">
+  <div class="pricing-grid">
+    <div class="price-card">
+      <h3>One-on-One Program</h3>
+      <ul>
+        <li>3-Session: $180 total | $60/session</li>
+        <li>5-Session: $275 total | $55/session</li>
+        <li>8-Session: $420 total | $52.50/session</li>
+        <li>10-Session: $500 total | $50/session</li>
+      </ul>
     </div>
+    <div class="price-card">
+      <h3>Semi-Private Program (2 Players)</h3>
+      <ul>
+        <li>3-Session: $270 total | $45/session per player</li>
+        <li>5-Session: $400 total | $40/session per player</li>
+        <li>8-Session: $600 total | $37.50/session per player</li>
+        <li>10-Session: $700 total | $35/session per player</li>
+      </ul>
+    </div>
+  </div>
+</div>
 
     <div class="clinic-section">
-      <h2>Upcoming Clinics</h2>
-      <div class="clinic-container">
-        
-        <div class="clinic-card active">
-          <span class="status-tag status-open">Accepting Students</span>
-          <h3>May Mastery: Elite Prep Clinic</h3>
-          <div class="clinic-details">
-            A high-performance camp focusing on cognitive speed, refined ball mastery, and high-intensity attacking scenarios.
-            <br><em>May 19 - May 21 • Gilbert, AZ</em>
-          </div>
-          <div class="clinic-price">Full Clinic: $65</div>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdgmfulX82c_ediS_P7hJuIMAjWHuzRunEdcnuJgxAScEUwMA/viewform?usp=header" class="btn-signup-modern" target="_blank">REGISTER NOW</a>
-        </div>
-
-        <div class="clinic-card completed">
-          <span class="status-tag status-completed">Concluded</span>
-          <h3>Gilbert Spring Clinic</h3>
-          <div class="clinic-details">
-            Shooting, fundamental mastery, and competitive play.
-            <br><em>Concluded March 2025</em>
-          </div>
-        </div>
-
+      <h2>Clinics</h2>
+      <div class="clinic-card">
+        <h3>Gilbert Clinic (Concluded)</h3>
+        <p>High-intensity 3-day clinic focused on shooting, ball mastery, and competitive play.</p>
+        <p><strong>Concluded April 2025</strong></p>
       </div>
+      <p style="font-style: italic; color: #777; margin-top: 20px;">No upcoming clinics at this time. Stay tuned for future dates!</p>
     </div>
   </main>
 
   <footer>
-    &copy; 2025 Motion Mastery Soccer Academy. All Rights Reserved.
+    &copy; 2025 Motion Mastery Soccer Academy
   </footer>
 
 </body>
